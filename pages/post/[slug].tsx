@@ -26,7 +26,7 @@ import {
     post,
   }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
-      <div>
+      <article className="prose prose-lg">
         <main style={{margin: "3rem"}}>
         <div>
           <Link href="/">
@@ -40,7 +40,7 @@ import {
         <DocumentRenderer document={post.content.document} renderers={renderers} />
       )}
         </main>
-      </div>
+      </article>
     );
   }
   
