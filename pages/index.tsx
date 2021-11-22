@@ -1,5 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
+import Capsule from '../components/Capsule'
+import Layout from '../components/Layout'
 
 // Import the generated Lists API from Keystone
 import { query } from '.keystone/api';
@@ -9,9 +11,18 @@ export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div>
-      <main style={{margin: "3rem"}}>
-      <h1>Tyler Benning Portfolio ❄️</h1>
+    <Layout>
+      <main className="m-16 p-16">
+      <h1 className="mt-6 text-5xl font-bold text-primary leading-headers">Hi, I'm Tyler — <span className="text-darkseafoam inline-block" >I'm the founding designer at Together</span></h1>
+      {/* <h1 className="antialiased font-serif mt-6 text-6xl text-gray-900">Hi, I’m Tyler — <span className="text-darkseafoam inline-block" >I’m the founding designer at Together</span></h1> */}
+      <p className="text-secondary mt-6">Having worked at a startup for the last few years, I developed a knack for these roles too</p>
+      <div className="space-x-2 mt-3 flex flex-wrap">
+        <Capsule text="Product Management"/>
+        <Capsule text="Growth"/>
+        <Capsule text="Marketing"/>
+        <Capsule text="Front End Development"/>
+        <Capsule text="User Research"/>
+      </div>
       <ul>
         {/* Render each post with a link to the content page */}
         {posts.map(post => (
@@ -23,7 +34,7 @@ export default function Home({
         ))}
       </ul>
       </main>
-    </div>
+    </Layout>
   )
 }
 

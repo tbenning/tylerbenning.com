@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .text-primary {
+        @apply text-gray-900;
+      }
+    
+      .text-secondary {
+        @apply text-gray-700;
+      }
+    
+      .text-tertiary {
+        @apply text-gray-500;
+      }
+}
+
+@layer components {
+    .btn {
+        @apply inline-block rounded-sm shadow-md bg-blue-700 text-white px-5 py-3;
+    }
+}
