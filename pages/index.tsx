@@ -11,7 +11,7 @@ export default function Home({
   return (
     <div>
       <main style={{margin: "3rem"}}>
-      <h1>Hello World! 👋🏻 </h1>
+      <h1>Tyler Benning Portfolio ❄️</h1>
       <ul>
         {/* Render each post with a link to the content page */}
         {posts.map(post => (
