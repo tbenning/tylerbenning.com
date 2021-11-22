@@ -6,6 +6,7 @@ import {
   import Link from 'next/link';
   import { DocumentRenderer, DocumentRendererProps } from '@keystone-next/document-renderer';
   import { query } from '.keystone/api';
+  import Layout from '../../components/Layout'
   
   const renderers: DocumentRendererProps['renderers'] = {
     // use your editor's autocomplete to see what other renderers you can override
@@ -26,6 +27,7 @@ import {
     post,
   }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
+      <Layout>
       <article className="prose prose-lg">
         <main style={{margin: "3rem"}}>
         <div>
@@ -41,6 +43,7 @@ import {
       )}
         </main>
       </article>
+      </Layout>
     );
   }
   
