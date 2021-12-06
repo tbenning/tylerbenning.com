@@ -1,3 +1,4 @@
+import { ArrowNarrowRightIcon } from "@heroicons/react/solid"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
@@ -10,7 +11,7 @@ export default function Nav() {
     { name: "About", href: "/about", isActive: router.pathname === "/about" },
   ]
   return (
-    <nav className="sticky top-0 z-10 flex flex-col items-center content-center w-full py-3 md:w- md:flex-row">
+    <nav className="relative top-0 z-10 flex flex-col items-center content-center w-full py-3 md:w- md:flex-row">
       <Link href="/">
         <a className="pb-2 md:pr-6">
           <LogoSvg />
@@ -24,17 +25,19 @@ export default function Nav() {
           href="https://www.linkedin.com/in/tylerbenning/"
           target="_blank"
           rel="noreferrer"
-          className="pl-4 text-sm border-l md:text-base text-tertiary hover:text-primary border-primary"
+          className="flex items-center pl-4 text-sm border-l md:text-base text-tertiary hover:text-primary border-primary"
         >
-          LinkedIn
+          <span className="mr-1">LinkedIn</span>
+          <ArrowNarrowRightIcon className="w-4 h-4 mb-1 text-gray-300 -rotate-45" />
         </a>
         <a
           href="https://dribbble.com/tbenning"
           target="_blank"
           rel="noreferrer"
-          className="text-sm md:text-base text-tertiary hover:text-primary"
+          className="flex items-center text-sm md:text-base text-tertiary hover:text-primary"
         >
-          Dribbble
+          <span className="mr-1">Dribbble</span>
+          <ArrowNarrowRightIcon className="w-4 h-4 mb-1 text-gray-300 -rotate-45" />
         </a>
       </div>
     </nav>
