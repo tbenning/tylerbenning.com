@@ -14,8 +14,8 @@
   .text-tertiary {
     @apply text-gray-500;
   }
-  .divider-main {
-    @apply divider-gray-400;
+  .border-primary {
+    @apply border-gray-300;
   }
 }
 

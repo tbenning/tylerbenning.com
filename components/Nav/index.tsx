@@ -10,23 +10,21 @@ export default function Nav() {
     { name: "About", href: "/about", isActive: router.pathname === "/about" },
   ]
   return (
-    <div className="absolute z-10 flex items-center py-4 divide-x divide-gray-300">
+    <nav className="sticky top-0 z-10 flex flex-col items-center content-center w-full py-3 md:w- md:flex-row">
+      <Link href="/">
+        <a className="pb-2 md:pr-6">
+          <LogoSvg />
+        </a>
+      </Link>
       <div className="flex items-center pr-4 space-x-4">
-        <Link href="/">
-          <a className="pr-2 md:pr-4">
-            <LogoSvg />
-          </a>
-        </Link>
         {navigation.map((item) => (
           <NavItem item={item} key={item.name} />
         ))}
-      </div>
-      <div className="flex items-center pl-4 space-x-4">
         <a
           href="https://www.linkedin.com/in/tylerbenning/"
           target="_blank"
           rel="noreferrer"
-          className="text-sm md:text-base text-tertiary hover:text-primary"
+          className="pl-4 text-sm border-l md:text-base text-tertiary hover:text-primary border-primary"
         >
           LinkedIn
         </a>
@@ -39,7 +37,7 @@ export default function Nav() {
           Dribbble
         </a>
       </div>
-    </div>
+    </nav>
   )
 }
 

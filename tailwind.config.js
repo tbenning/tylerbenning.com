@@ -18,6 +18,7 @@ module.exports = {
         cyan: colors.cyan,
         darkseafoam: "#3F87A1",
         darkerseafoam: "#207796",
+        lime: colors.lime,
       },
     },
   },
