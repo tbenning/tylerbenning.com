@@ -3,21 +3,24 @@
 @tailwind utilities;
 
 @layer utilities {
-    .text-primary {
-        @apply text-gray-900;
-      }
-    
-      .text-secondary {
-        @apply text-gray-700;
-      }
-    
-      .text-tertiary {
-        @apply text-gray-500;
-      }
+  .text-primary {
+    @apply text-gray-900;
+  }
+
+  .text-secondary {
+    @apply text-gray-700;
+  }
+
+  .text-tertiary {
+    @apply text-gray-500;
+  }
+  .divider-main {
+    @apply divider-gray-400;
+  }
 }
 
 @layer components {
-    .btn {
-        @apply inline-block rounded-sm shadow-md bg-blue-700 text-white px-5 py-3;
-    }
+  .btn {
+    @apply inline-block rounded-sm shadow-md bg-blue-700 text-white px-5 py-3;
+  }
 }

@@ -1,4 +1,5 @@
 import { InferGetStaticPropsType } from "next"
+import Head from "next/head"
 import Link from "next/link"
 
 import Homepage from "../components/Homepage"
@@ -12,19 +13,20 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
-      <main className="p-8 mt-16">
-        <Homepage />
-        <ul>
-          {/* Render each post with a link to the content page */}
-          {posts.map((post) => (
-            <li key={post.id}>
-              <Link href={`/post/${post.slug}`}>
-                <a>{post.title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </main>
+      <Head>
+        <link rel="shortcut icon" href="/favicon.png" />
+      </Head>
+      <Homepage />
+      <ul>
+        {/* Render each post with a link to the content page */}
+        {posts.map((post) => (
+          <li key={post.id}>
+            <Link href={`/post/${post.slug}`}>
+              <a>{post.title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </Layout>
   )
 }
