@@ -1,10 +1,12 @@
 import Layout from "../components/Layout"
+import { TriSquareIcon } from "../components/StripeIcons"
 
 export default function About() {
   return (
     <Layout>
-      <div className="max-w-3xl pt-10 mx-auto mt-16 md:mt-20">
-        <h1 className="mb-8 font-serif text-4xl antialiased">About</h1>
+      <div className="max-w-3xl mx-auto mt-4 md:mt-12">
+        <TriSquareIcon />
+        <h1 className="mt-4 mb-8 font-serif text-4xl antialiased">About</h1>
         <h2 className="mb-4 text-lg font-bold">Early Career Stuff</h2>
         <p className="mb-4 text-lg leading-relaxed text-secondary">
           In 2015, I started my design career at an IBM design studio in

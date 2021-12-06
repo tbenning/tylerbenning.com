@@ -8,11 +8,11 @@
   }
 
   .text-secondary {
-    @apply text-gray-700;
+    @apply text-gray-600;
   }
 
   .text-tertiary {
-    @apply text-gray-500;
+    @apply text-gray-400;
   }
   .border-primary {
     @apply border-gray-300;

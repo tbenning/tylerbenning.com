@@ -11,7 +11,7 @@ import Capsule from "../Capsule"
 export default function Homepage() {
   return (
     <>
-      <section className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+      <section className="mb-8 grid grid-cols-1 md:grid-cols-2 md:gap-4 md:mb-0">
         <div className="order-2 py-4 md:py-36 2xl:py-44 md:order-1">
           {/* <h1 className="mt-6 mb-4 text-3xl font-bold tracking-tight md:text-5xl text-primary leading-headers">
             Hi, I’m Tyler —{" "}
@@ -33,7 +33,7 @@ export default function Homepage() {
               I’m the founding designer at Together
             </span>
           </h1>
-          <p className="text-lg md:leading-relaxed md:mt-6 md:text-xl text-tertiary">
+          <p className="text-lg md:leading-relaxed md:mt-6 md:text-xl text-secondary">
             Having worked at a startup for the last few years, I often work in
             these roles too
           </p>

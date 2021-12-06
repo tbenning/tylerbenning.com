@@ -25,19 +25,19 @@ export default function Nav() {
           href="https://www.linkedin.com/in/tylerbenning/"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center pl-4 text-sm border-l md:text-base text-tertiary hover:text-primary border-primary"
+          className="flex items-center pl-4 text-sm border-l md:text-base text-secondary hover:text-primary border-primary"
         >
           <span className="mr-1">LinkedIn</span>
-          <ArrowNarrowRightIcon className="w-4 h-4 mb-1 text-gray-300 -rotate-45" />
+          <ArrowNarrowRightIcon className="w-4 h-4 text-gray-400 -rotate-45" />
         </a>
         <a
           href="https://dribbble.com/tbenning"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center text-sm md:text-base text-tertiary hover:text-primary"
+          className="flex items-center text-sm md:text-base text-secondary hover:text-primary"
         >
           <span className="mr-1">Dribbble</span>
-          <ArrowNarrowRightIcon className="w-4 h-4 mb-1 text-gray-300 -rotate-45" />
+          <ArrowNarrowRightIcon className="w-4 h-4 text-gray-400 -rotate-45" />
         </a>
       </div>
     </nav>
@@ -51,7 +51,7 @@ function NavItem({ item, key }) {
         className={`text-sm  md:text-base  ${
           item.isActive
             ? "text-darkseafoam font-semibold hover:text-darkerseafoam"
-            : "text-tertiary hover:text-primary"
+            : "text-secondary hover:text-primary"
         }`}
       >
         {item.name}
