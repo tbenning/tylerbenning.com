@@ -1,5 +1,8 @@
 import Image from "next/image"
 
+import brainstationLogo from "../../public/img/work-logos/brainstation.png"
+import ibmLogo from "../../public/img/work-logos/ibm.png"
+import paddleLogo from "../../public/img/work-logos/paddle.png"
 import tophatLogo from "../../public/img/work-logos/top-hat.png"
 
 const workHistory = [
@@ -7,16 +10,31 @@ const workHistory = [
     title: "Together",
     role: "Founding Product Designer",
     date: "2019-\u00a0\u00a0",
+    img: tophatLogo,
   },
   {
     title: "Top Hat",
     role: "Senior Product Designer",
     date: "2017-19",
+    img: tophatLogo,
   },
   {
-    title: "Top Hat",
-    role: "Senior Product Designer",
-    date: "2017-19",
+    title: "Brainstation",
+    role: "UX Teaching Assistant",
+    date: "2016-17",
+    img: brainstationLogo,
+  },
+  {
+    title: "Paddle HR",
+    role: "Founding Product Designer",
+    date: "2016-17",
+    img: paddleLogo,
+  },
+  {
+    title: "IBM",
+    role: "User Experience Designer",
+    date: "2015-16",
+    img: ibmLogo,
   },
 ]
 
@@ -31,8 +49,8 @@ export default function SectionWorkList() {
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 p-1 border rounded-full border-primary">
               <Image
-                src={tophatLogo}
-                alt="top hat logo"
+                src={work.img}
+                alt={`${work.title} logo`}
                 width={24}
                 height={24}
               />
