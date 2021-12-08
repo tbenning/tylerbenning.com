@@ -1,7 +1,17 @@
 import { ChevronRightIcon } from "@heroicons/react/outline"
 import Link from "next/link"
 
-export default function SectionBlogList({ posts }) {
+type Props = {
+  posts: [
+    {
+      id: string
+      title: string
+      slug: string
+    }
+  ]
+}
+
+export default function SectionBlogList({ posts }: Props) {
   return (
     <ul className="border rounded-lg border-primary">
       {/* Render each post with a link to the content page */}

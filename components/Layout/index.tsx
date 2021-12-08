@@ -1,6 +1,10 @@
 import Nav from "../Nav"
 
-export default function Layout({ children }) {
+type Props = {
+  children: any
+}
+
+export default function Layout({ children }: Props) {
   return (
     <>
       <div className="container mx-auto max-w-screen-xl">

@@ -1,4 +1,9 @@
-export default function SectionHeader({ icon, title, subtitle }) {
+type Props = {
+  icon: JSX.Element
+  title: string
+  subtitle?: string
+}
+export default function SectionHeader({ icon, title, subtitle }: Props) {
   return (
     <header className="flex flex-col items-center mb-8">
       <div>{icon}</div>
