@@ -1,7 +1,7 @@
 import {
   DocumentRenderer,
   DocumentRendererProps,
-} from "@keystone-next/document-renderer"
+} from "@keystone-6/document-renderer"
 import {
   GetStaticPathsResult,
   GetStaticPropsContext,
