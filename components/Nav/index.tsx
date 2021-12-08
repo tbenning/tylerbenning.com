@@ -19,7 +19,7 @@ export default function Nav() {
       </Link>
       <div className="flex items-center pr-4 space-x-4">
         {navigation.map((item) => (
-          <NavItem item={item} key={item.name} />
+          <NavItem item={item} />
         ))}
         <a
           href="https://www.linkedin.com/in/tylerbenning/"
@@ -44,9 +44,17 @@ export default function Nav() {
   )
 }
 
-function NavItem({ item, key }) {
+type Props = {
+  item: {
+    href: string
+    isActive: boolean
+    name: string
+  }
+}
+
+function NavItem({ item }: Props) {
   return (
-    <Link key={key} href={item.href}>
+    <Link key={item.name} href={item.href}>
       <a
         className={`text-sm  md:text-base  ${
           item.isActive
