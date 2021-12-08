@@ -19,18 +19,7 @@ export default function Nav() {
       </Link>
       <div className="flex items-center pr-4 space-x-4">
         {navigation.map((item) => (
-          // <NavItem item={item} key={item.name} />
-          <Link key={item.name} href={item.href}>
-            <a
-              className={`text-sm  md:text-base  ${
-                item.isActive
-                  ? "text-darkseafoam font-semibold hover:text-darkerseafoam"
-                  : "text-secondary hover:text-primary"
-              }`}
-            >
-              {item.name}
-            </a>
-          </Link>
+          <NavItem item={item} key={item.name} />
         ))}
         <a
           href="https://www.linkedin.com/in/tylerbenning/"
@@ -55,26 +44,26 @@ export default function Nav() {
   )
 }
 
-// type Props = {
-//   item: {
-//     href: string
-//     isActive: boolean
-//     name: string
-//   }
-// }
+type Props = {
+  item: {
+    href: string
+    isActive: boolean
+    name: string
+  }
+}
 
-// function NavItem({ item }: Props) {
-//   return (
-//     <Link key={item.name} href={item.href}>
-//       <a
-//         className={`text-sm  md:text-base  ${
-//           item.isActive
-//             ? "text-darkseafoam font-semibold hover:text-darkerseafoam"
-//             : "text-secondary hover:text-primary"
-//         }`}
-//       >
-//         {item.name}
-//       </a>
-//     </Link>
-//   )
-// }
+function NavItem({ item }: Props) {
+  return (
+    <Link key={item.name} href={item.href}>
+      <a
+        className={`text-sm  md:text-base  ${
+          item.isActive
+            ? "text-darkseafoam font-semibold hover:text-darkerseafoam"
+            : "text-secondary hover:text-primary"
+        }`}
+      >
+        {item.name}
+      </a>
+    </Link>
+  )
+}

@@ -1,10 +1,10 @@
-import { document } from "@keystone-6/fields-document"
 import { config, list } from "@keystone-6/core"
 import { text } from "@keystone-6/core/fields"
+import { document } from "@keystone-6/fields-document"
 
 const Post = list({
   fields: {
-    title: text({ isRequired: true }),
+    title: text({ validation: { isRequired: true } }),
     slug: text({ isIndexed: "unique", isFilterable: true }),
     content: document({
       formatting: true,
