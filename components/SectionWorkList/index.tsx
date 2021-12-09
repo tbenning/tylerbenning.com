@@ -3,6 +3,7 @@ import Image from "next/image"
 import brainstationLogo from "../../public/img/work-logos/brainstation.png"
 import ibmLogo from "../../public/img/work-logos/ibm.png"
 import paddleLogo from "../../public/img/work-logos/paddle.png"
+import togetherLogo from "../../public/img/work-logos/together.png"
 import tophatLogo from "../../public/img/work-logos/top-hat.png"
 
 const workHistory = [
@@ -10,7 +11,7 @@ const workHistory = [
     title: "Together",
     role: "Founding Product Designer",
     date: "2019-\u00a0\u00a0",
-    img: tophatLogo,
+    img: togetherLogo,
   },
   {
     title: "Top Hat",
