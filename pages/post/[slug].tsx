@@ -40,8 +40,6 @@ export default function PostPage({
             </Link>
           </div>
           <h1>{post.title}</h1>
-
-          {/* <p>{post.content}</p> */}
           {post.content?.document && (
             <DocumentRenderer
               document={post.content.document}
@@ -54,15 +52,19 @@ export default function PostPage({
   )
 }
 
+type Post = {
+  slug: string
+}
+
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const posts = await query.Post.findMany({
     query: `slug`,
   })
 
   const paths = posts
-    .map((post) => post.slug)
-    .filter((slug): slug is string => !!slug)
-    .map((slug) => `/post/${slug}`)
+    .map((post: Post) => post.slug)
+    .filter((slug: string): slug is string => !!slug)
+    .map((slug: string) => `/post/${slug}`)
 
   return {
     paths,

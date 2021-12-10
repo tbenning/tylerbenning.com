@@ -33,7 +33,7 @@ export default function Homepage() {
               I’m the founding designer at Together
             </span>
           </h1>
-          <p className="text-lg md:leading-relaxed md:mt-6 md:text-xl text-secondary">
+          <p className="text-lg md:leading-relaxed md:mt-6 md:text-lg text-secondary">
             Having worked at a startup for the last few years, I often work in
             these roles too
           </p>

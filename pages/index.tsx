@@ -10,6 +10,12 @@ import { PentaIcon, CircleIcon, DiamondIcon } from "../components/StripeIcons"
 // Import the generated Lists API from Keystone
 import { query } from ".keystone/api"
 
+type Post = {
+  id: string
+  slug: string
+  title: string
+}
+
 // Home receives a `posts` prop from `getStaticProps` below
 export default function Home({
   posts,
