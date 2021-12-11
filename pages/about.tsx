@@ -4,7 +4,7 @@ import { TriSquareIcon } from "../components/StripeIcons"
 export default function About() {
   return (
     <Layout>
-      <div className="max-w-3xl mx-auto mt-4 md:mt-12">
+      <div className="max-w-3xl mx-auto mt-4 mb-20 md:mt-12">
         <TriSquareIcon />
         <h1 className="mt-4 mb-8 font-serif text-4xl antialiased">About</h1>
         <h2 className="mb-4 text-lg font-bold">Early Career Stuff</h2>

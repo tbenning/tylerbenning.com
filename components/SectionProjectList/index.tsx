@@ -21,7 +21,7 @@ export default function SectionProjectList({ projects }: Props) {
         <li key={project.id} className="w-full md:w-1/2">
           <Link href={`/project/${project.slug}`}>
             <a
-              className="inline-block w-full p-10 h-80 hover:opacity-80"
+              className="inline-block w-full p-6 h-80 transition duration-500 ease-in-out hover:opacity-80"
               style={{ background: project.bgColor ? project.bgColor : "#333" }}
             >
               <h3

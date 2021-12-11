@@ -25,6 +25,7 @@ const Project = list({
     title: text({ validation: { isRequired: true } }),
     subtitle: text({ validation: { isRequired: true } }),
     timeline: text(),
+    company: text(),
     slug: text({ isIndexed: "unique", isFilterable: true }),
     isPublished: checkbox({ defaultValue: false }),
     bgColor: text(),

@@ -25,6 +25,7 @@ model Project {
   title       String  @default("")
   subtitle    String  @default("")
   timeline    String  @default("")
+  company     String  @default("")
   slug        String  @unique @default("")
   isPublished Boolean @default(false)
   bgColor     String  @default("")

@@ -18,7 +18,7 @@ export default function SectionBlogList({ posts }: Props) {
       {posts.map((post) => (
         <li
           key={post.id}
-          className="border-b last-of-type:border-0 last-of-type:rounded-b-lg first-of-type:rounded-t-lg hover:bg-gray-100"
+          className="border-b last-of-type:border-0 last-of-type:rounded-b-lg first-of-type:rounded-t-lg transition duration-500 ease-in-out hover:bg-gray-100"
         >
           <Link href={`/post/${post.slug}`}>
             <a className="flex items-center justify-between w-full p-3 ">

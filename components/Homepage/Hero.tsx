@@ -8,7 +8,7 @@ export default function Hero() {
             I’m the founding designer at{" "}
             <a
               href="https://www.togetherplatform.com"
-              className="text-darkseafoam hover:underline hover:decoration-dotted"
+              className="border-b-4 text-darkseafoam border-opacity-0 hover:border-opacity-100 hover:border-darkerseafoam hover:text-darkerseafoam transition duration-500 ease-in-out"
               target="_blank"
               rel="noreferrer"
             >

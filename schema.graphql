@@ -113,6 +113,7 @@ type Project {
   title: String
   subtitle: String
   timeline: String
+  company: String
   slug: String
   isPublished: Boolean
   bgColor: String
@@ -137,6 +138,7 @@ input ProjectWhereInput {
   title: StringFilter
   subtitle: StringFilter
   timeline: StringFilter
+  company: StringFilter
   slug: StringFilter
   isPublished: BooleanFilter
   bgColor: StringFilter
@@ -148,6 +150,7 @@ input ProjectOrderByInput {
   title: OrderDirection
   subtitle: OrderDirection
   timeline: OrderDirection
+  company: OrderDirection
   slug: OrderDirection
   isPublished: OrderDirection
   bgColor: OrderDirection
@@ -158,6 +161,7 @@ input ProjectUpdateInput {
   title: String
   subtitle: String
   timeline: String
+  company: String
   slug: String
   isPublished: Boolean
   bgColor: String
@@ -174,6 +178,7 @@ input ProjectCreateInput {
   title: String
   subtitle: String
   timeline: String
+  company: String
   slug: String
   isPublished: Boolean
   bgColor: String
