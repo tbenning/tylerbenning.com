@@ -6,6 +6,7 @@ type Post {
   title: String
   subtitle: String
   slug: String
+  isPublished: Boolean
   content: Post_content_Document
 }
 
@@ -26,6 +27,7 @@ input PostWhereInput {
   title: StringFilter
   subtitle: StringFilter
   slug: StringFilter
+  isPublished: BooleanFilter
 }
 
 input IDFilter {
@@ -67,11 +69,17 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
+input BooleanFilter {
+  equals: Boolean
+  not: BooleanFilter
+}
+
 input PostOrderByInput {
   id: OrderDirection
   title: OrderDirection
   subtitle: OrderDirection
   slug: OrderDirection
+  isPublished: OrderDirection
 }
 
 enum OrderDirection {
@@ -83,6 +91,7 @@ input PostUpdateInput {
   title: String
   subtitle: String
   slug: String
+  isPublished: Boolean
   content: JSON
 }
 
@@ -95,6 +104,80 @@ input PostCreateInput {
   title: String
   subtitle: String
   slug: String
+  isPublished: Boolean
+  content: JSON
+}
+
+type Project {
+  id: ID!
+  title: String
+  subtitle: String
+  timeline: String
+  slug: String
+  isPublished: Boolean
+  bgColor: String
+  hasDarkBg: Boolean
+  content: Project_content_Document
+}
+
+type Project_content_Document {
+  document(hydrateRelationships: Boolean! = false): JSON!
+}
+
+input ProjectWhereUniqueInput {
+  id: ID
+  slug: String
+}
+
+input ProjectWhereInput {
+  AND: [ProjectWhereInput!]
+  OR: [ProjectWhereInput!]
+  NOT: [ProjectWhereInput!]
+  id: IDFilter
+  title: StringFilter
+  subtitle: StringFilter
+  timeline: StringFilter
+  slug: StringFilter
+  isPublished: BooleanFilter
+  bgColor: StringFilter
+  hasDarkBg: BooleanFilter
+}
+
+input ProjectOrderByInput {
+  id: OrderDirection
+  title: OrderDirection
+  subtitle: OrderDirection
+  timeline: OrderDirection
+  slug: OrderDirection
+  isPublished: OrderDirection
+  bgColor: OrderDirection
+  hasDarkBg: OrderDirection
+}
+
+input ProjectUpdateInput {
+  title: String
+  subtitle: String
+  timeline: String
+  slug: String
+  isPublished: Boolean
+  bgColor: String
+  hasDarkBg: Boolean
+  content: JSON
+}
+
+input ProjectUpdateArgs {
+  where: ProjectWhereUniqueInput!
+  data: ProjectUpdateInput!
+}
+
+input ProjectCreateInput {
+  title: String
+  subtitle: String
+  timeline: String
+  slug: String
+  isPublished: Boolean
+  bgColor: String
+  hasDarkBg: Boolean
   content: JSON
 }
 
@@ -113,6 +196,15 @@ type Mutation {
   updatePosts(data: [PostUpdateArgs!]!): [Post]
   deletePost(where: PostWhereUniqueInput!): Post
   deletePosts(where: [PostWhereUniqueInput!]!): [Post]
+  createProject(data: ProjectCreateInput!): Project
+  createProjects(data: [ProjectCreateInput!]!): [Project]
+  updateProject(
+    where: ProjectWhereUniqueInput!
+    data: ProjectUpdateInput!
+  ): Project
+  updateProjects(data: [ProjectUpdateArgs!]!): [Project]
+  deleteProject(where: ProjectWhereUniqueInput!): Project
+  deleteProjects(where: [ProjectWhereUniqueInput!]!): [Project]
 }
 
 type Query {
@@ -124,6 +216,14 @@ type Query {
   ): [Post!]
   post(where: PostWhereUniqueInput!): Post
   postsCount(where: PostWhereInput! = {}): Int
+  projects(
+    where: ProjectWhereInput! = {}
+    orderBy: [ProjectOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Project!]
+  project(where: ProjectWhereUniqueInput!): Project
+  projectsCount(where: ProjectWhereInput! = {}): Int
   keystone: KeystoneMeta!
 }
 

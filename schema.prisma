@@ -12,9 +12,22 @@ generator client {
 }
 
 model Post {
-  id       String @id @default(cuid())
-  title    String @default("")
-  subtitle String @default("")
-  slug     String @unique @default("")
-  content  String @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+  id          String  @id @default(cuid())
+  title       String  @default("")
+  subtitle    String  @default("")
+  slug        String  @unique @default("")
+  isPublished Boolean @default(false)
+  content     String  @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+}
+
+model Project {
+  id          String  @id @default(cuid())
+  title       String  @default("")
+  subtitle    String  @default("")
+  timeline    String  @default("")
+  slug        String  @unique @default("")
+  isPublished Boolean @default(false)
+  bgColor     String  @default("")
+  hasDarkBg   Boolean @default(true)
+  content     String  @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
 }

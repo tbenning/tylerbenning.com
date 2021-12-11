@@ -6,6 +6,7 @@ type Props = {
     {
       id: string
       title: string
+      subtitle: string
       slug: string
     }
   ]
@@ -14,14 +15,23 @@ type Props = {
 export default function SectionBlogList({ posts }: Props) {
   return (
     <ul className="border rounded-lg border-primary">
-      {/* Render each post with a link to the content page */}
       {posts.map((post) => (
-        <li key={post.id}>
+        <li
+          key={post.id}
+          className="border-b last-of-type:border-0 last-of-type:rounded-b-lg first-of-type:rounded-t-lg hover:bg-gray-100"
+        >
           <Link href={`/post/${post.slug}`}>
-            <a className="flex items-center justify-between w-full p-2 border-b border-primary last-of-type:border-0 last-of-type:rounded-b-lg hover:bg-gray-100 first-of-type:rounded-t-lg">
-              <div className="flex items-center space-x-2">
-                <DocumentTextIcon className="w-4 h-4 text-gray-800" />
-                <span className="font-bold text-md">{post.title}</span>
+            <a className="flex items-center justify-between w-full p-3 ">
+              <div className="flex items-start space-x-2">
+                <DocumentTextIcon className="w-6 h-6  text-gray-800" />
+                <div className="inline-block">
+                  <h3 className="font-bold text-md text-primary">
+                    {post.title}
+                  </h3>
+                  <span className="text-sm text-secondary">
+                    {post.subtitle}
+                  </span>
+                </div>
               </div>
               <ChevronRightIcon className="w-4 h-4 text-gray-400" />
             </a>

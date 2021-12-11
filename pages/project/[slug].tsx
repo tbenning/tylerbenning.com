@@ -27,8 +27,8 @@ const renderers: DocumentRendererProps["renderers"] = {
   },
 }
 
-export default function PostPage({
-  post,
+export default function ProjectPage({
+  project,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
@@ -39,11 +39,11 @@ export default function PostPage({
               <a>&larr; back home</a>
             </Link>
           </div>
-          <h1 className="font-serif text-5xl">{post.title}</h1>
-          {post.content?.document && (
+          <h1 className="font-serif text-5xl">{project.title}</h1>
+          {project.content?.document && (
             <div className="prose prose-lg">
               <DocumentRenderer
-                document={post.content.document}
+                document={project.content.document}
                 renderers={renderers}
               />
             </div>
@@ -54,19 +54,19 @@ export default function PostPage({
   )
 }
 
-type Post = {
+type Project = {
   slug: string
 }
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const posts = await query.Post.findMany({
+  const projects = await query.Project.findMany({
     query: `slug`,
   })
 
-  const paths = posts
-    .map((post: Post) => post.slug)
+  const paths = projects
+    .map((project: Project) => project.slug)
     .filter((slug: string): slug is string => !!slug)
-    .map((slug: string) => `/post/${slug}`)
+    .map((slug: string) => `/project/${slug}`)
 
   return {
     paths,
@@ -75,9 +75,9 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
-  const post = await query.Post.findOne({
+  const project = await query.Project.findOne({
     where: { slug: params!.slug as string },
     query: "id title content {document}",
   })
-  return { props: { post } }
+  return { props: { project } }
 }

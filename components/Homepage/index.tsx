@@ -9,52 +9,38 @@ import {
 import Capsule from "../Capsule"
 import SectionBlogList from "../SectionBlogList"
 import SectionHeader from "../SectionHeader"
+import SectionProjectList from "../SectionProjectList"
 import SectionWorkList from "../SectionWorkList"
 import { PentaIcon, CircleIcon, DiamondIcon } from "../StripeIcons"
+import Hero from "./Hero"
 
 type Props = {
   posts: [
     {
       id: string
       title: string
+      subtitle: string
       slug: string
+    }
+  ]
+  projects: [
+    {
+      id: string
+      title: string
+      subtitle: string
+      slug: string
+      isPublished: boolean
+      bgColor: string
+      hasDarkBg: boolean
     }
   ]
 }
 
-export default function Homepage({ posts }: Props) {
+export default function Homepage({ posts, projects }: Props) {
   return (
     <>
-      <section className="mb-8 grid grid-cols-1 md:grid-cols-2 md:gap-4 md:mb-0">
-        <div className="order-2 py-4 md:py-36 2xl:py-44 md:order-1">
-          <h1 className="mb-4 font-serif text-4xl antialiased  md:text-6xl text-primary">
-            Hi, I’m Tyler —{" "}
-            <span className="inline-block ">
-              I’m the founding designer at{" "}
-              <a
-                href="https://www.togetherplatform.com"
-                className="text-darkseafoam"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Together
-              </a>
-            </span>
-          </h1>
-        </div>
-
-        <div className="z-0 order-1 md:order-2">
-          <div className="inset-y-0 -mt-36 md:-mt-52">
-            <img
-              src="img/hero1.svg"
-              alt="cursor on a white box with abstract design"
-              className="mx-auto"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-3xl px-16 py-8 mx-auto mt-20 mb-20 text-center border rounded-md bg-gray-50">
+      <Hero />
+      <section className="max-w-3xl px-6 py-6 mx-auto mt-0 mb-10 text-center border md:mb-20 md:mt-20 md:py-8 md:px-16 rounded-md bg-gray-50">
         <p className="text-lg md:leading-relaxed md:text-xl text-secondary">
           I sometimes have a hard time staying in my lane, and like to jump
           across these roles too
@@ -87,7 +73,8 @@ export default function Homepage({ posts }: Props) {
           />
         </div>
       </section>
-      <section className="max-w-3xl mx-auto mb-10">
+
+      <section className="max-w-3xl mx-auto mb-10 md:mb-20">
         <SectionHeader
           title="Work"
           subtitle="Where I've been for the last few years"
@@ -100,7 +87,7 @@ export default function Homepage({ posts }: Props) {
         <SectionWorkList />
       </section>
 
-      <section className="max-w-3xl mx-auto mb-10">
+      <section className="max-w-3xl mx-auto mb-10 md:mb-20">
         <SectionHeader
           title="Writing"
           subtitle="A smattering of tips, tricks, and thoughts from along the way"
@@ -113,9 +100,9 @@ export default function Homepage({ posts }: Props) {
         <SectionBlogList posts={posts} />
       </section>
 
-      <section className="mx-auto">
+      <section className="mx-auto mb-10 md:mb-20">
         <SectionHeader
-          title="Goodies"
+          title="Work Projects"
           subtitle="Tidbits and snippets of projects over time"
           icon={
             <div className="hover:animate-pulse">
@@ -123,6 +110,7 @@ export default function Homepage({ posts }: Props) {
             </div>
           }
         />
+        <SectionProjectList projects={projects} />
       </section>
     </>
   )
