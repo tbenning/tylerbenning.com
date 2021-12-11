@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "@heroicons/react/outline"
+import { ChevronRightIcon, DocumentTextIcon } from "@heroicons/react/outline"
 import Link from "next/link"
 
 type Props = {
@@ -20,7 +20,7 @@ export default function SectionBlogList({ posts }: Props) {
           <Link href={`/post/${post.slug}`}>
             <a className="flex items-center justify-between w-full p-2 border-b border-primary last-of-type:border-0 last-of-type:rounded-b-lg hover:bg-gray-100 first-of-type:rounded-t-lg">
               <div className="flex items-center space-x-2">
-                <BlogIcon />
+                <DocumentTextIcon className="w-4 h-4 text-gray-800" />
                 <span className="font-bold text-md">{post.title}</span>
               </div>
               <ChevronRightIcon className="w-4 h-4 text-gray-400" />
