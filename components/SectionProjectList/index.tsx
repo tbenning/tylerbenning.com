@@ -16,7 +16,7 @@ type Props = {
 
 export default function SectionProjectList({ projects }: Props) {
   return (
-    <ul className="flex flex-col overflow-hidden rounded-lg md:flex-row">
+    <ul className="flex flex-col flex-wrap overflow-hidden rounded-lg md:flex-row">
       {projects.map((project) => (
         <li key={project.id} className="w-full md:w-1/2">
           <Link href={`/project/${project.slug}`}>
