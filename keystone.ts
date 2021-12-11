@@ -5,6 +5,7 @@ import { document } from "@keystone-6/fields-document"
 const Post = list({
   fields: {
     title: text({ validation: { isRequired: true } }),
+    subtitle: text({ validation: { isRequired: true } }),
     slug: text({ isIndexed: "unique", isFilterable: true }),
     content: document({
       formatting: true,
