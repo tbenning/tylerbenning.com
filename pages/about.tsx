@@ -33,7 +33,7 @@ export default function About() {
           >
             Top Hat
           </a>{" "}
-          right after they’d raised a Series B. I joined a team of 4 other
+          right after they’d raised a Series C. I joined a team of 4 other
           designers. I led design for the student mobile app (iOS and Android),
           launched a new product called Top Hat Test (web), and led design for
           the Classroom Response team (web).
