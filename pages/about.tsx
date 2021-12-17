@@ -1,9 +1,15 @@
 import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 import { TriSquareIcon } from "../components/StripeIcons"
 
 export default function About() {
   return (
     <Layout>
+      <SEO
+        og="og-about.png"
+        title="About"
+        description="About the life and times of Tyler"
+      />
       <div className="max-w-3xl mx-auto mt-4 mb-20 md:mt-12">
         <TriSquareIcon />
         <h1 className="mt-4 mb-8 font-serif text-4xl antialiased">About</h1>

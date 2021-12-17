@@ -1,8 +1,8 @@
 import { InferGetStaticPropsType } from "next"
-import Head from "next/head"
 
 import Homepage from "../components/Homepage"
 import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 // Import the generated Lists API from Keystone
 import { query } from ".keystone/api"
 
@@ -29,9 +29,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
-      <Head>
-        <link rel="shortcut icon" href="/favicon.png" />
-      </Head>
+      <SEO />
       <Homepage posts={posts} projects={projects} />
     </Layout>
   )

@@ -10,6 +10,7 @@ import {
 import Link from "next/link"
 
 import Layout from "../../components/Layout"
+import SEO from "../../components/SEO"
 import { query } from ".keystone/api"
 
 const renderers: DocumentRendererProps["renderers"] = {
@@ -32,6 +33,7 @@ export default function ProjectPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
+      <SEO title={project.title} description={project.subtitle} />
       <article>
         <main className="mt-4">
           <div className="mb-4">
