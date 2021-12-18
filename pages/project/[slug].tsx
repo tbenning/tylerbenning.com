@@ -10,6 +10,7 @@ import {
 import Link from "next/link"
 
 import Layout from "../../components/Layout"
+import ProjectLayout from "../../components/ProjectLayout"
 import SEO from "../../components/SEO"
 import { query } from ".keystone/api"
 
@@ -34,14 +35,14 @@ export default function ProjectPage({
   return (
     <Layout>
       <SEO title={project.title} description={project.subtitle} />
-      <article>
+      <ProjectLayout>
         <main className="mt-4">
           <div className="mb-4">
             <Link href="/">
               <a>&larr; back home</a>
             </Link>
           </div>
-          <h1 className="font-serif text-5xl">{project.title}</h1>
+          <h1 className="mb-4 font-serif text-5xl">{project.title}</h1>
           {project.content?.document && (
             <div className="prose prose-lg">
               <DocumentRenderer
@@ -51,7 +52,7 @@ export default function ProjectPage({
             </div>
           )}
         </main>
-      </article>
+      </ProjectLayout>
     </Layout>
   )
 }

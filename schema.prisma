@@ -12,12 +12,13 @@ generator client {
 }
 
 model Post {
-  id          String  @id @default(cuid())
-  title       String  @default("")
-  subtitle    String  @default("")
-  slug        String  @unique @default("")
-  isPublished Boolean @default(false)
-  content     String  @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+  id          String    @id @default(cuid())
+  title       String    @default("")
+  subtitle    String    @default("")
+  slug        String    @unique @default("")
+  publishDate DateTime?
+  isPublished Boolean   @default(false)
+  content     String    @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
 }
 
 model Project {

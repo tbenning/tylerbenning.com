@@ -6,9 +6,13 @@ type Post {
   title: String
   subtitle: String
   slug: String
+  publishDate: DateTime
   isPublished: Boolean
   content: Post_content_Document
 }
+
+scalar DateTime
+  @specifiedBy(url: "https://datatracker.ietf.org/doc/html/rfc3339#section-5.6")
 
 type Post_content_Document {
   document(hydrateRelationships: Boolean! = false): JSON!
@@ -27,6 +31,7 @@ input PostWhereInput {
   title: StringFilter
   subtitle: StringFilter
   slug: StringFilter
+  publishDate: DateTimeNullableFilter
   isPublished: BooleanFilter
 }
 
@@ -69,6 +74,17 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
+input DateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: DateTimeNullableFilter
+}
+
 input BooleanFilter {
   equals: Boolean
   not: BooleanFilter
@@ -79,6 +95,7 @@ input PostOrderByInput {
   title: OrderDirection
   subtitle: OrderDirection
   slug: OrderDirection
+  publishDate: OrderDirection
   isPublished: OrderDirection
 }
 
@@ -91,6 +108,7 @@ input PostUpdateInput {
   title: String
   subtitle: String
   slug: String
+  publishDate: DateTime
   isPublished: Boolean
   content: JSON
 }
@@ -104,6 +122,7 @@ input PostCreateInput {
   title: String
   subtitle: String
   slug: String
+  publishDate: DateTime
   isPublished: Boolean
   content: JSON
 }

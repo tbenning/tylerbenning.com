@@ -1,9 +1,9 @@
 import Head from "next/head"
+
 type SEOProps = {
   title?: string
   description?: string
   og?: string
-  // url?: string
 }
 
 export default function SEO({
@@ -19,10 +19,16 @@ export default function SEO({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content="Tyler Benning" />
-      <meta property="og:image" content={`images/meta/${og}`} />
+      <meta
+        property="og:image"
+        content={`https://tylerbenning.com/images/meta/${og}`}
+      />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="twitter:image" content={`images/meta/${og}`} />
+      <meta
+        property="twitter:image"
+        content={`https://tylerbenning.com/images/meta/${og}`}
+      />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:creator" content="tylerbenning_" />
@@ -46,9 +52,7 @@ export default function SEO({
         sizes="16x16"
         href="meta/favicon-16x16.png"
       />
-      <link rel="manifest" href="/site.webmanifest" />
-      <meta name="msapplication-config" content="meta/browserconfig.xml" />
-      <meta name="msapplication-TileColor" content="#ffffff" />
+      <link rel="manifest" href="meta/site.webmanifest" />
       <meta name="theme-color" content="#ffffff" />
     </Head>
   )

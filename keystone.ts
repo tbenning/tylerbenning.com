@@ -1,5 +1,5 @@
 import { config, list } from "@keystone-6/core"
-import { text, checkbox } from "@keystone-6/core/fields"
+import { text, checkbox, timestamp } from "@keystone-6/core/fields"
 import { document } from "@keystone-6/fields-document"
 
 const Post = list({
@@ -7,6 +7,7 @@ const Post = list({
     title: text({ validation: { isRequired: true } }),
     subtitle: text({ validation: { isRequired: true } }),
     slug: text({ isIndexed: "unique", isFilterable: true }),
+    publishDate: timestamp(),
     isPublished: checkbox({ defaultValue: false }),
     content: document({
       formatting: true,

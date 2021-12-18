@@ -9,6 +9,7 @@ import {
 } from "next"
 import Link from "next/link"
 
+import BlogLayout from "../../components/BlogLayout"
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
 import { query } from ".keystone/api"
@@ -34,14 +35,14 @@ export default function PostPage({
   return (
     <Layout>
       <SEO title={post.title} description={post.subtitle} />
-      <article>
+      <BlogLayout>
         <main className="mt-4">
           <div className="mb-4">
             <Link href="/">
               <a>&larr; back home</a>
             </Link>
           </div>
-          <h1 className="font-serif text-5xl">{post.title}</h1>
+          <h1 className="mb-4 font-serif text-5xl">{post.title}</h1>
           {post.content?.document && (
             <div className="prose prose-lg">
               <DocumentRenderer
@@ -51,7 +52,7 @@ export default function PostPage({
             </div>
           )}
         </main>
-      </article>
+      </BlogLayout>
     </Layout>
   )
 }

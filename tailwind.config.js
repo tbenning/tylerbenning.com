@@ -20,6 +20,16 @@ module.exports = {
         darkerseafoam: "#207796",
         lime: colors.lime,
       },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0.25, transform: "translateY(10px)" },
+          "35%": { opacity: 1 },
+          "100%": { opacity: 1, transform: "translateY(0px)" },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 3.5s forwards cubic-bezier(0.165, 0.82, 0.165, 1)",
+      },
     },
   },
   variants: {
