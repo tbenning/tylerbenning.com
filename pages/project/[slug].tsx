@@ -2,17 +2,60 @@ import {
   DocumentRenderer,
   DocumentRendererProps,
 } from "@keystone-6/document-renderer"
+import { NotEditable } from "@keystone-6/fields-document/component-blocks"
+import { InferRenderersForComponentBlocks } from "@keystone-6/fields-document/component-blocks"
 import {
   GetStaticPathsResult,
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next"
+import Image from "next/image"
 import Link from "next/link"
 
 import Layout from "../../components/Layout"
 import ProjectLayout from "../../components/ProjectLayout"
 import SEO from "../../components/SEO"
+import { componentBlocks } from "../../lib/component-blocks"
 import { query } from ".keystone/api"
+
+const componentBlockRenderers: InferRenderersForComponentBlocks<
+  typeof componentBlocks
+> = {
+  quote: (props) => {
+    return (
+      <div
+        style={{
+          borderLeft: "3px solid #CBD5E0",
+          paddingLeft: 16,
+        }}
+      >
+        <div style={{ fontStyle: "italic", color: "#4A5568" }}>
+          {props.content}
+        </div>
+        <div style={{ fontWeight: "bold", color: "#718096" }}>
+          <NotEditable>— </NotEditable>
+          {props.attribution}
+        </div>
+      </div>
+    )
+  },
+  image: (props) => {
+    return (
+      <div className="max-w-full max-h-full my-4">
+        {/* <Image src={props.imageSrc} alt={props.altText} layout="fill" /> */}
+        <Image
+          src={props.imageSrc}
+          alt={props.altText}
+          width={props.width}
+          height={props.height}
+          layout="responsive"
+          objectFit="scale-down"
+        />
+        <span className="text-sm text-tertiary">{props.caption}</span>
+      </div>
+    )
+  },
+}
 
 const renderers: DocumentRendererProps["renderers"] = {
   // use your editor's autocomplete to see what other renderers you can override
@@ -48,6 +91,7 @@ export default function ProjectPage({
               <DocumentRenderer
                 document={project.content.document}
                 renderers={renderers}
+                componentBlocks={componentBlockRenderers}
               />
             </div>
           )}

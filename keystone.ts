@@ -1,6 +1,8 @@
 import { config, list } from "@keystone-6/core"
-import { text, checkbox, timestamp } from "@keystone-6/core/fields"
+import { text, checkbox, timestamp, image } from "@keystone-6/core/fields"
 import { document } from "@keystone-6/fields-document"
+
+import { componentBlocks } from "./lib/component-blocks"
 
 const Post = list({
   fields: {
@@ -31,6 +33,7 @@ const Project = list({
     isPublished: checkbox({ defaultValue: false }),
     bgColor: text(),
     hasDarkBg: checkbox({ defaultValue: true }),
+
     content: document({
       formatting: true,
       dividers: true,
@@ -39,7 +42,19 @@ const Project = list({
         [1, 1],
         [1, 1, 1],
       ],
+      ui: {
+        views: require.resolve("./lib/component-blocks"),
+      },
+      componentBlocks,
     }),
+  },
+})
+
+const Image = list({
+  fields: {
+    name: text(),
+    image: image(),
+    publishDate: timestamp(),
   },
 })
 
@@ -49,5 +64,16 @@ export default config({
     generateNextGraphqlAPI: true,
     generateNodeAPI: true,
   },
-  lists: { Post, Project },
+  lists: {
+    Post,
+    Project,
+    Image,
+  },
+  images: {
+    upload: "local",
+    local: {
+      storagePath: "public/img/uploaded",
+      baseUrl: "/img/uploaded",
+    },
+  },
 })
