@@ -22,26 +22,31 @@ model Post {
 }
 
 model Project {
-  id          String  @id @default(cuid())
-  title       String  @default("")
-  subtitle    String  @default("")
-  timeline    String  @default("")
-  company     String  @default("")
-  slug        String  @unique @default("")
-  isPublished Boolean @default(false)
-  bgColor     String  @default("")
-  hasDarkBg   Boolean @default(true)
-  content     String  @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+  id              String  @id @default(cuid())
+  title           String  @default("")
+  subtitle        String  @default("")
+  timeline        String  @default("")
+  company         String  @default("")
+  slug            String  @unique @default("")
+  isPublished     Boolean @default(false)
+  bgColor         String  @default("")
+  hasDarkBg       Boolean @default(true)
+  featuredImage   Image?  @relation("Project_featuredImage", fields: [featuredImageId], references: [id])
+  featuredImageId String? @map("featuredImage")
+  content         String  @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+
+  @@index([featuredImageId])
 }
 
 model Image {
-  id              String    @id @default(cuid())
-  name            String    @default("")
-  image_filesize  Int?
-  image_extension String?
-  image_width     Int?
-  image_height    Int?
-  image_mode      String?
-  image_id        String?
-  publishDate     DateTime?
+  id                         String    @id @default(cuid())
+  name                       String    @default("")
+  image_filesize             Int?
+  image_extension            String?
+  image_width                Int?
+  image_height               Int?
+  image_mode                 String?
+  image_id                   String?
+  publishDate                DateTime?
+  from_Project_featuredImage Project[] @relation("Project_featuredImage")
 }

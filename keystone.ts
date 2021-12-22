@@ -1,5 +1,11 @@
 import { config, list } from "@keystone-6/core"
-import { text, checkbox, timestamp, image } from "@keystone-6/core/fields"
+import {
+  text,
+  checkbox,
+  timestamp,
+  image,
+  relationship,
+} from "@keystone-6/core/fields"
 import { document } from "@keystone-6/fields-document"
 
 import { componentBlocks } from "./lib/component-blocks"
@@ -33,7 +39,7 @@ const Project = list({
     isPublished: checkbox({ defaultValue: false }),
     bgColor: text(),
     hasDarkBg: checkbox({ defaultValue: true }),
-
+    featuredImage: relationship({ ref: "Image" }),
     content: document({
       formatting: true,
       dividers: true,
@@ -44,6 +50,13 @@ const Project = list({
       ],
       ui: {
         views: require.resolve("./lib/component-blocks"),
+      },
+      relationships: {
+        inlineImage: {
+          kind: "prop",
+          listKey: "Image",
+          selection: "id image { url }",
+        },
       },
       componentBlocks,
     }),

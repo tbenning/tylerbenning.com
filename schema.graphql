@@ -137,6 +137,7 @@ type Project {
   isPublished: Boolean
   bgColor: String
   hasDarkBg: Boolean
+  featuredImage: Image
   content: Project_content_Document
 }
 
@@ -162,6 +163,7 @@ input ProjectWhereInput {
   isPublished: BooleanFilter
   bgColor: StringFilter
   hasDarkBg: BooleanFilter
+  featuredImage: ImageWhereInput
 }
 
 input ProjectOrderByInput {
@@ -185,7 +187,14 @@ input ProjectUpdateInput {
   isPublished: Boolean
   bgColor: String
   hasDarkBg: Boolean
+  featuredImage: ImageRelateToOneForUpdateInput
   content: JSON
+}
+
+input ImageRelateToOneForUpdateInput {
+  create: ImageCreateInput
+  connect: ImageWhereUniqueInput
+  disconnect: Boolean
 }
 
 input ProjectUpdateArgs {
@@ -202,7 +211,13 @@ input ProjectCreateInput {
   isPublished: Boolean
   bgColor: String
   hasDarkBg: Boolean
+  featuredImage: ImageRelateToOneForCreateInput
   content: JSON
+}
+
+input ImageRelateToOneForCreateInput {
+  create: ImageCreateInput
+  connect: ImageWhereUniqueInput
 }
 
 type Image {

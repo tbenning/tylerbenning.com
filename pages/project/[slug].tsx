@@ -9,9 +9,9 @@ import {
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next"
-import Image from "next/image"
 import Link from "next/link"
 
+import ImgZoom from "../../components/ImgZoom"
 import Layout from "../../components/Layout"
 import ProjectLayout from "../../components/ProjectLayout"
 import SEO from "../../components/SEO"
@@ -40,16 +40,15 @@ const componentBlockRenderers: InferRenderersForComponentBlocks<
     )
   },
   image: (props) => {
+    const imgUrl = props?.image?.data?.image?.url
+
     return (
       <div className="max-w-full max-h-full my-4">
-        {/* <Image src={props.imageSrc} alt={props.altText} layout="fill" /> */}
-        <Image
-          src={props.imageSrc}
+        <ImgZoom
+          src={imgUrl}
           alt={props.altText}
           width={props.width}
           height={props.height}
-          layout="responsive"
-          objectFit="scale-down"
         />
         <span className="text-sm text-tertiary">{props.caption}</span>
       </div>
@@ -124,7 +123,7 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 export async function getStaticProps({ params }: GetStaticPropsContext) {
   const project = await query.Project.findOne({
     where: { slug: params!.slug as string },
-    query: "id title content {document}",
+    query: "id title content {document (hydrateRelationships: true)}",
   })
   return { props: { project } }
 }
