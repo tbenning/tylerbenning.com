@@ -26,6 +26,17 @@ const Post = list({
         [1, 1],
         [1, 1, 1],
       ],
+      ui: {
+        views: require.resolve("./lib/component-blocks"),
+      },
+      componentBlocks,
+      relationships: {
+        inlineImage: {
+          kind: "prop",
+          listKey: "Image",
+          selection: "id alt image { url }",
+        },
+      },
     }),
   },
 })
