@@ -20,6 +20,13 @@ type Project = {
   isPublished: boolean
   bgColor: string
   hasDarkBg: boolean
+  projectType: string
+  featuredImage: {
+    alt: string
+    image: {
+      url: string
+    }
+  }
 }
 
 // Home receives a `posts` prop from `getStaticProps` below
@@ -40,7 +47,8 @@ export default function Home({
 export async function getStaticProps() {
   const posts = await query.Post.findMany({ query: "id title slug subtitle" })
   const projects = await query.Project.findMany({
-    query: "id title slug projectType subtitle isPublished bgColor hasDarkBg",
+    query:
+      "id title slug projectType subtitle isPublished bgColor hasDarkBg featuredImage { alt image { url }}",
   })
   return { props: { posts, projects } }
 }

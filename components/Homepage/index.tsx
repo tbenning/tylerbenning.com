@@ -39,6 +39,12 @@ type Props = {
       isPublished: boolean
       bgColor: string
       hasDarkBg: boolean
+      featuredImage: {
+        alt: string
+        image: {
+          url: string
+        }
+      }
     }
   ]
 }

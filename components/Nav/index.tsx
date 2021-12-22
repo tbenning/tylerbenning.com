@@ -11,7 +11,7 @@ export default function Nav() {
     { name: "About", href: "/about", isActive: router.pathname === "/about" },
   ]
   return (
-    <nav className="sticky top-0 z-10  border-b border-gray-300">
+    <nav className="sticky top-0 z-10  border-b border-primary">
       <div className="container flex items-center w-full px-4 pt-2 pb-2 mx-auto bg-white max-w-screen-xl md:flex-row md:px-10">
         <Link href="/">
           <a className="hidden mr-0 md:mr-6 md:inline-block">

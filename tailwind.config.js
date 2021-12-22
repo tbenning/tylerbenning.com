@@ -14,7 +14,7 @@ module.exports = {
         headers: 1.15,
       },
       colors: {
-        gray: colors.blueGray,
+        gray: colors.slate,
         cyan: colors.cyan,
         darkseafoam: "#3F87A1",
         darkerseafoam: "#207796",
