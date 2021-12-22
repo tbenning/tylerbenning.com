@@ -30,6 +30,15 @@ export default function About() {
       <div className="max-w-3xl mx-auto mt-4 mb-20 md:mt-12">
         <TriSquareIcon />
         <h1 className="mt-4 mb-8 font-serif text-4xl antialiased">About</h1>
+        <p className="mb-4 text-xl leading-relaxed text-secondary">
+          Hello! I'm product designer with front-end developer super powers.
+          While my primary craft is design, I spent the last few years learning
+          to closely collaborate in code with engineers — and I love it.{" "}
+        </p>
+        <p className="mb-8 text-xl leading-relaxed text-secondary">
+          At present, I live in 🏔 British Columbia, where you'll often find me
+          on the mountain hiking or snowboarding.
+        </p>
         <h2 className="mb-4 text-lg font-bold">Early Career Stuff</h2>
         <p className="mb-4 text-lg leading-relaxed text-secondary">
           In 2015, I started my design career at an IBM design studio in
@@ -44,7 +53,15 @@ export default function About() {
           >
             PaddleHR
           </a>{" "}
-          to help them get their first product off the ground.
+          to help them get their first product off the ground and raise a{" "}
+          <a
+            href="https://www.crunchbase.com/organization/paddle-3"
+            className="underline text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100 hover:no-underline"
+            target="_blank"
+            rel="noreferrer"
+          >
+            seed round.
+          </a>
         </p>
         <p className="mb-4 text-lg leading-relaxed text-secondary">
           In 2017, I took my second job at{" "}
@@ -56,10 +73,18 @@ export default function About() {
           >
             Top Hat
           </a>{" "}
-          right after they’d raised a Series C. I joined a team of 4 other
-          designers. I led design for the student mobile app (iOS and Android),
-          launched a new product called Top Hat Test (web), and led design for
-          the Classroom Response team (web).
+          right after they’d raised a{" "}
+          <a
+            className="underline text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100 hover:no-underline"
+            href="https://www.crunchbase.com/organization/tophat"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Series C
+          </a>{" "}
+          . I joined a team of 4 other designers. I led design for the student
+          mobile app (iOS and Android), launched a new product called Top Hat
+          Test (web), and led design for the Classroom Response team (web).
         </p>
         <h2 className="pt-4 mb-4 text-lg font-bold">Joining Together</h2>
         <p className="mb-4 text-lg leading-relaxed text-secondary">
@@ -72,18 +97,26 @@ export default function About() {
           >
             Together
           </a>
-          . At this point, Together had a team comprised of co-founders, had a
-          handful of customers, ~$20k in ARR, and had just been accepted into Y
-          Combinator. I joined with another engineer from Top Hat, and the four
-          of us moved to Palo Alto into a hackerhouse for the summer to build
-          product, talk to users, get customers, and prepare for demo day.
+          . At this point, Together was just the two co-founders, had a handful
+          of customers, ~$20k in ARR, and had just been accepted into Y
+          Combinator. I joined with another engineer I knew from Top Hat, and
+          the four of us moved to Palo Alto into a hackerhouse for the summer to
+          build product, talk to users, get customers, and prepare for demo day.
         </p>
         <p className="mb-4 text-lg leading-relaxed text-secondary">
           Since then, Together has grown &gt;50x since I joined, acquired big
           name customers including Disney, 7-11, AirBnb, Heineken, and a bunch
           more. We’ve gone from an initial team of 4 to a team of &gt;15. We’ve
-          raised a couple of rounds of funding, and I’ve learned a tremendous
-          amount about company building.
+          raised a couple of{" "}
+          <a
+            className="underline text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100 hover:no-underline"
+            href="https://www.crunchbase.com/organization/together-d62b"
+            target="_blank"
+            rel="noreferrer"
+          >
+            rounds of funding
+          </a>{" "}
+          and I’ve learned a tremendous amount about company building.
         </p>
         <h2 className="pt-4 mb-4 text-lg font-bold">One Liners</h2>
         <p className="mb-4 text-lg text-secondary">
