@@ -40,7 +40,7 @@ export default function Home({
 export async function getStaticProps() {
   const posts = await query.Post.findMany({ query: "id title slug subtitle" })
   const projects = await query.Project.findMany({
-    query: "id title slug subtitle isPublished bgColor hasDarkBg",
+    query: "id title slug projectType subtitle isPublished bgColor hasDarkBg",
   })
   return { props: { posts, projects } }
 }

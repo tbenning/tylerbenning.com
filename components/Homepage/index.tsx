@@ -7,11 +7,17 @@ import {
 } from "@heroicons/react/solid"
 
 import Capsule from "../Capsule"
+import PersonalProjectList from "../PersonalProjectList"
 import SectionBlogList from "../SectionBlogList"
 import SectionHeader from "../SectionHeader"
 import SectionProjectList from "../SectionProjectList"
 import SectionWorkList from "../SectionWorkList"
-import { PentaIcon, CircleIcon, DiamondIcon } from "../StripeIcons"
+import {
+  PentaIcon,
+  CircleIcon,
+  DiamondIcon,
+  SquirqleIcon,
+} from "../StripeIcons"
 import Hero from "./Hero"
 
 type Props = {
@@ -29,6 +35,7 @@ type Props = {
       title: string
       subtitle: string
       slug: string
+      projectType: string
       isPublished: boolean
       bgColor: string
       hasDarkBg: boolean
@@ -37,6 +44,13 @@ type Props = {
 }
 
 export default function Homepage({ posts, projects }: Props) {
+  const workProjects = projects.filter(
+    (project) => project.projectType === "work"
+  )
+  const personalProjects = projects.filter(
+    (project) => project.projectType === "personal"
+  )
+
   return (
     <>
       <Hero />
@@ -102,6 +116,19 @@ export default function Homepage({ posts, projects }: Props) {
 
       <section className="mx-auto mb-10 md:mb-20">
         <SectionHeader
+          title="Fun Projects"
+          subtitle="Things I built for fun and favours"
+          icon={
+            <div className="hover:animate-pulse">
+              <SquirqleIcon />
+            </div>
+          }
+        />
+        <PersonalProjectList projects={personalProjects} />
+      </section>
+
+      <section className="mx-auto mb-10 md:mb-20">
+        <SectionHeader
           title="Work Projects"
           subtitle="Tidbits and snippets of projects over time"
           icon={
@@ -110,7 +137,7 @@ export default function Homepage({ posts, projects }: Props) {
             </div>
           }
         />
-        <SectionProjectList projects={projects} />
+        <SectionProjectList projects={workProjects} />
       </section>
     </>
   )

@@ -148,3 +148,47 @@ export function CircleIcon() {
     </svg>
   )
 }
+
+export function SquirqleIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="42"
+      height="42"
+      fill="none"
+      viewBox="0 0 42 42"
+    >
+      <mask
+        id="mask0_707_5622"
+        style={{ maskType: "alpha" }}
+        width="40"
+        height="40"
+        x="1"
+        y="1"
+        maskUnits="userSpaceOnUse"
+      >
+        <path
+          fill="#FE3838"
+          d="M25.893 2.74c13.847 3.71 17.078 9.306 13.368 23.153-3.71 13.847-9.307 17.078-23.153 13.368C2.26 35.551-.97 29.954 2.74 16.107 6.45 2.26 12.047-.97 25.894 2.74z"
+        ></path>
+      </mask>
+      <g mask="url(#mask0_707_5622)">
+        <path
+          fill="#18556C"
+          d="M-26.254 41.46H-12.672V128.985H-26.254z"
+          transform="rotate(-90 -26.254 41.46)"
+        ></path>
+        <path
+          fill="#E17757"
+          d="M-26.246 27.882H-12.663999999999998V115.40700000000001H-26.246z"
+          transform="rotate(-90 -26.246 27.882)"
+        ></path>
+        <path
+          fill="#EED4C3"
+          d="M-26.258 14.297H-12.675999999999998V101.822H-26.258z"
+          transform="rotate(-90 -26.258 14.297)"
+        ></path>
+      </g>
+    </svg>
+  )
+}

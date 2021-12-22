@@ -106,8 +106,9 @@ type Project = {
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const projects = await query.Project.findMany({
-    query: `slug`,
+    query: `slug projectType`,
   })
+  console.log({ projects })
 
   const paths = projects
     .map((project: Project) => project.slug)

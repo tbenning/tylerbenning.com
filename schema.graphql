@@ -131,6 +131,7 @@ type Project {
   id: ID!
   title: String
   subtitle: String
+  projectType: String
   timeline: String
   company: String
   slug: String
@@ -157,6 +158,7 @@ input ProjectWhereInput {
   id: IDFilter
   title: StringFilter
   subtitle: StringFilter
+  projectType: StringNullableFilter
   timeline: StringFilter
   company: StringFilter
   slug: StringFilter
@@ -166,10 +168,39 @@ input ProjectWhereInput {
   featuredImage: ImageWhereInput
 }
 
+input StringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input NestedStringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
 input ProjectOrderByInput {
   id: OrderDirection
   title: OrderDirection
   subtitle: OrderDirection
+  projectType: OrderDirection
   timeline: OrderDirection
   company: OrderDirection
   slug: OrderDirection
@@ -181,6 +212,7 @@ input ProjectOrderByInput {
 input ProjectUpdateInput {
   title: String
   subtitle: String
+  projectType: String
   timeline: String
   company: String
   slug: String
@@ -205,6 +237,7 @@ input ProjectUpdateArgs {
 input ProjectCreateInput {
   title: String
   subtitle: String
+  projectType: String
   timeline: String
   company: String
   slug: String

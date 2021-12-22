@@ -5,6 +5,7 @@ import {
   timestamp,
   image,
   relationship,
+  select,
 } from "@keystone-6/core/fields"
 import { document } from "@keystone-6/fields-document"
 
@@ -33,6 +34,15 @@ const Project = list({
   fields: {
     title: text({ validation: { isRequired: true } }),
     subtitle: text({ validation: { isRequired: true } }),
+    projectType: select({
+      type: "string",
+      options: [
+        { label: "Personal", value: "personal" },
+        { label: "Work", value: "work" },
+      ],
+      defaultValue: "work",
+      ui: { displayMode: "segmented-control" },
+    }),
     timeline: text(),
     company: text(),
     slug: text({ isIndexed: "unique", isFilterable: true }),

@@ -25,6 +25,7 @@ model Project {
   id              String  @id @default(cuid())
   title           String  @default("")
   subtitle        String  @default("")
+  projectType     String? @default("work")
   timeline        String  @default("")
   company         String  @default("")
   slug            String  @unique @default("")

@@ -18,12 +18,12 @@ export default function SectionBlogList({ posts }: Props) {
       {posts.map((post) => (
         <li
           key={post.id}
-          className="border-b last-of-type:border-0 last-of-type:rounded-b-lg first-of-type:rounded-t-lg transition duration-500 ease-in-out hover:bg-gray-100"
+          className="border-b border-primary last-of-type:border-0 last-of-type:rounded-b-lg first-of-type:rounded-t-lg transition duration-500 ease-in-out hover:bg-gray-100"
         >
           <Link href={`/post/${post.slug}`}>
             <a className="flex items-center justify-between w-full p-3 ">
               <div className="flex items-start space-x-2">
-                <DocumentTextIcon className="w-6 h-6  text-gray-800" />
+                <DocumentTextIcon className="w-6 h-6 text-gray-800" />
                 <div className="inline-block">
                   <h3 className="font-bold text-md text-primary">
                     {post.title}
