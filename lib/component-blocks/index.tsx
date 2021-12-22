@@ -48,7 +48,7 @@ export const componentBlocks = {
             </li>
             <li>
               <span style={{ fontWeight: "bold" }}>Alt</span>{" "}
-              {props.altText.value}
+              {props.image.value?.data?.alt}
             </li>
             <li>
               <span style={{ fontWeight: "bold" }}>Caption</span>{" "}
@@ -68,9 +68,8 @@ export const componentBlocks = {
         label: "Inline Image",
         relationship: "inlineImage",
       }),
-      width: fields.text({ label: "Width", defaultValue: "600" }),
-      height: fields.text({ label: "Height", defaultValue: "300" }),
-      altText: fields.text({ label: "Alt Text" }),
+      width: fields.text({ label: "Width", defaultValue: "768" }),
+      height: fields.text({ label: "Height", defaultValue: "384" }),
       caption: fields.text({ label: "Caption" }),
     },
   }),

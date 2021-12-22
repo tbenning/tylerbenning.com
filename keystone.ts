@@ -55,7 +55,7 @@ const Project = list({
         inlineImage: {
           kind: "prop",
           listKey: "Image",
-          selection: "id image { url }",
+          selection: "id alt image { url }",
         },
       },
       componentBlocks,
@@ -66,6 +66,7 @@ const Project = list({
 const Image = list({
   fields: {
     name: text(),
+    alt: text(),
     image: image(),
     publishDate: timestamp(),
   },

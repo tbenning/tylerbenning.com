@@ -41,6 +41,7 @@ model Project {
 model Image {
   id                         String    @id @default(cuid())
   name                       String    @default("")
+  alt                        String    @default("")
   image_filesize             Int?
   image_extension            String?
   image_width                Int?

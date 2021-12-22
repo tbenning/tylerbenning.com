@@ -15,7 +15,7 @@ export default function ImgZoom({ src, alt, width, height }: Props) {
   const windowSize = useWindowSize()
   const isLargeScreen = windowSize.width > 1400
   return (
-    <Zoom zoomMargin={isLargeScreen ? 200 : 0}>
+    <Zoom zoomMargin={isLargeScreen ? 160 : 0}>
       <Image
         src={src}
         alt={alt}

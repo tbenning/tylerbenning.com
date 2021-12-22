@@ -223,6 +223,7 @@ input ImageRelateToOneForCreateInput {
 type Image {
   id: ID!
   name: String
+  alt: String
   image: ImageFieldOutput
   publishDate: DateTime
 }
@@ -274,17 +275,20 @@ input ImageWhereInput {
   NOT: [ImageWhereInput!]
   id: IDFilter
   name: StringFilter
+  alt: StringFilter
   publishDate: DateTimeNullableFilter
 }
 
 input ImageOrderByInput {
   id: OrderDirection
   name: OrderDirection
+  alt: OrderDirection
   publishDate: OrderDirection
 }
 
 input ImageUpdateInput {
   name: String
+  alt: String
   image: ImageFieldInput
   publishDate: DateTime
 }
@@ -306,6 +310,7 @@ input ImageUpdateArgs {
 
 input ImageCreateInput {
   name: String
+  alt: String
   image: ImageFieldInput
   publishDate: DateTime
 }
