@@ -62,6 +62,8 @@ export default function PersonalProjectList({ projects }: Props) {
                     alt={project.featuredImage?.alt}
                     width={768}
                     height={384}
+                    objectFit="cover"
+                    objectPosition="top left"
                   />
                 </div>
               )}
