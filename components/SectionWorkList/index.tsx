@@ -10,7 +10,7 @@ import tophatLogo from "../../public/img/work-logos/top-hat.png"
 const workHistory = [
   {
     title: "Together",
-    role: "Founding Product Designer",
+    role: "Founding Designer",
     date: "2019-\u00a0\u00a0",
     img: togetherLogo,
     url: "https://www.togetherplatform.com/",
@@ -31,7 +31,7 @@ const workHistory = [
   },
   {
     title: "Paddle HR",
-    role: "Founding Product Designer",
+    role: "Founding Designer",
     date: "2016-17",
     img: paddleLogo,
     url: "https://www.paddlehr.com/",
@@ -69,12 +69,12 @@ export default function SectionWorkList() {
                   height={24}
                 />
               </div>
-              <h3 className="font-bold text-md">{work.title}</h3>
+              <h3 className="font-semibold text-md">{work.title}</h3>
             </div>
             <div className="flex items-center justify-between w-full md:w-fit space-x-4">
-              <span className="text-sm text-secondary">{work.role}</span>
+              <span className="text-md text-secondary">{work.role}</span>
               <div className="flex items-center space-x-2">
-                <span className="font-mono text-sm text-tertiary">
+                <span className="font-mono text-md text-tertiary">
                   {work.date}
                 </span>
                 <ArrowNarrowRightIcon className="w-4 h-4 text-gray-400 -rotate-45" />

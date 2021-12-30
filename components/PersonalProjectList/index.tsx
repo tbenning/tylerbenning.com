@@ -28,11 +28,11 @@ export default function PersonalProjectList({ projects }: Props) {
       {projects.map((project) => (
         <li
           key={project.id}
-          className="w-full overflow-hidden md:w-1/2 lg:w-1/4"
+          className="w-full overflow-hidden md:w-1/2 lg:w-1/4 transition duration-500 ease-in-out hover:opacity-80 hover:translate-y-1"
         >
           <Link href={`/project/${project.slug}`}>
             <a
-              className="relative inline-block w-full pt-6 pl-6 h-80 transition duration-500 ease-in-out hover:opacity-80"
+              className="relative inline-block w-full pt-6 pl-6 h-80"
               style={{ background: project.bgColor ? project.bgColor : "#333" }}
             >
               <h3

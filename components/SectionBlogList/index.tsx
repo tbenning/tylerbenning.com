@@ -25,7 +25,7 @@ export default function SectionBlogList({ posts }: Props) {
               <div className="flex items-start space-x-2">
                 <DocumentTextIcon className="w-6 h-6 text-gray-800" />
                 <div className="inline-block">
-                  <h3 className="font-bold text-md text-primary">
+                  <h3 className="font-semibold text-md text-primary">
                     {post.title}
                   </h3>
                   <span className="text-sm text-secondary">
