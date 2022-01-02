@@ -19,6 +19,7 @@ module.exports = {
         darkseafoam: "#3F87A1",
         darkerseafoam: "#207796",
         lime: colors.lime,
+        sand100: "#FEFAF9",
       },
       keyframes: {
         fadeIn: {

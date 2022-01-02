@@ -24,11 +24,11 @@ type Props = {
 
 export default function PersonalProjectList({ projects }: Props) {
   return (
-    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+    <ul className="flex flex-wrap overflow-hidden rounded-lg">
       {projects.map((project) => (
         <li
           key={project.id}
-          className="overflow-hidden rounded-lg transition duration-500 ease-in-out hover:opacity-80 hover:translate-y-1"
+          className="w-full overflow-hidden md:w-1/2 lg:w-1/4 transition duration-500 ease-in-out hover:opacity-80 hover:translate-y-1"
         >
           <Link href={`/project/${project.slug}`}>
             <a

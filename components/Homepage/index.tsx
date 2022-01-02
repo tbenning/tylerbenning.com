@@ -60,12 +60,11 @@ export default function Homepage({ posts, projects }: Props) {
   return (
     <>
       <Hero />
-      <section className="max-w-3xl px-6 py-6 mx-auto mt-0 mb-10 text-center border md:mb-20 md:mt-20 md:py-8 md:px-12 rounded-md bg-gray-50">
-        <p className="text-md md:leading-relaxed text-secondary">
-          I sometimes have a hard time staying in my lane and like to jump
-          across these roles too
+      <section className="max-w-3xl px-6 py-6 mx-auto mt-6 mb-10 text-center border md:mb-20 md:mt-20 md:py-14 md:px-12 rounded-md bg-gray-50">
+        <p className="text-2xl font-bold md:text-3xl text-primary">
+          Sometimes I like to jump into these roles too
         </p>
-        <div className="flex flex-wrap justify-center mt-4 -m-1">
+        <div className="flex flex-wrap justify-center mt-6 -m-1">
           <Capsule
             text="Front End Development"
             className="m-1 hover:rotate-1"
@@ -96,7 +95,7 @@ export default function Homepage({ posts, projects }: Props) {
 
       <section className="max-w-3xl mx-auto mb-10 md:mb-20">
         <SectionHeader
-          title="Work"
+          title="Where I've Worked"
           subtitle="Where I've been for the last few years"
           icon={
             <div className="transition duration-1000 ease-in-out hover:-translate-y-2 hover:scale-150 hover:-rotate-12">
@@ -109,7 +108,7 @@ export default function Homepage({ posts, projects }: Props) {
 
       <section className="max-w-3xl mx-auto mb-10 md:mb-20">
         <SectionHeader
-          title="Writing"
+          title="Tips, Tricks &amp; Thoughts"
           subtitle="A smattering of tips, tricks, and thoughts from along the way"
           icon={
             <div className="transition duration-1000 ease-in-out hover:scale-150 hover:-translate-y-2 hover:rotate-180">
