@@ -1,5 +1,7 @@
+import { motion } from "framer-motion"
 import Image from "next/image"
 
+import { ExternalLink } from "../components/Footer"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import { TriSquareIcon } from "../components/StripeIcons"
@@ -12,34 +14,55 @@ export default function About() {
         title="About"
         description="About the life and times of Tyler"
       />
-      <div className="fixed">
+      <div className="relative">
         <img
           src="img/bg-circle.svg"
           alt="circle with woodgrain"
-          className="fixed right-0 -top-96 -z-10"
+          className="absolute right-0 -bottom-32 -z-10"
         />
-        <div className="hidden overflow-hidden md:block md:fixed md:w-40 md:h-40 md:right-44 rounded-md">
-          <Image
-            src="/img/about-tyler.jpg"
-            alt="photo of tyler"
-            height="160"
-            width="160"
-          />
+        <div className="absolute top-0 right-44">
+          <motion.div
+            className="hidden overflow-hidden md:block md:w-40 md:h-40 rounded-md"
+            initial={{ rotate: 10 }}
+            animate={{ rotate: 0 }}
+            transition={{ type: "spring", bounce: 0.25, mass: 2 }}
+          >
+            <Image
+              src="/img/about-tyler.jpg"
+              alt="photo of tyler"
+              height="160"
+              width="160"
+            />
+          </motion.div>
         </div>
       </div>
-      <div className="max-w-3xl mx-auto mt-4 mb-20 md:mt-12">
+      <div className="max-w-3xl mx-auto mt-4 mb-20 md:mt-12 md:pt-16">
         <TriSquareIcon />
-        <h1 className="mt-4 mb-8 font-serif text-4xl antialiased">About</h1>
-        <p className="mb-4 text-xl leading-relaxed text-secondary">
+        <h1 className="mt-4 mb-8 text-4xl antialiased font-bold">About</h1>
+        <p className="mb-4 text-2xl antialiased leading-relaxed tracking-tight text-tertiary">
           Hello! I'm product designer with front-end developer super powers.
           While my primary craft is design, I spent the last few years learning
-          to closely collaborate in code with engineers — and I love it.{" "}
+          to closely collaborate in code with engineers — and I love it.
         </p>
-        <p className="mb-8 text-xl leading-relaxed text-secondary">
-          At present, I live in 🏔 British Columbia, where you'll often find me
-          on the mountain hiking or snowboarding.
+        <p className="mb-4 text-2xl antialiased leading-relaxed tracking-tight text-tertiary">
+          I currently live in British Columbia, where you'll find me on the
+          mountain hiking or snowboarding. 🏔 🍁 🏂
         </p>
-        <h2 className="mb-4 text-lg font-bold">Early Career Stuff</h2>
+
+        <ul className="flex items-baseline space-x-4">
+          <li className="text-sm text-secondary">Find me on</li>
+          <li>
+            <ExternalLink href="#" title="LinkedIn" />
+          </li>
+          <li>
+            <ExternalLink href="#" title="Dribbble" />
+          </li>
+          <li>
+            <ExternalLink href="#" title="GitHub" />
+          </li>
+        </ul>
+        <hr className="my-8 border-t" />
+        <h2 className="mb-4 text-lg font-semibold">Early Career Stuff</h2>
         <p className="mb-4 text-lg leading-relaxed text-secondary">
           In 2015, I started my design career at an IBM design studio in
           downtown Toronto, with 20 or so other designers. I designed enterprise
@@ -47,7 +70,7 @@ export default function About() {
           and weekends, I started freelancing with a startup called{" "}
           <a
             href="https://www.paddlehr.com/"
-            className="underline text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100 hover:no-underline"
+            className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
             target="_blank"
             rel="noreferrer"
           >
@@ -56,7 +79,7 @@ export default function About() {
           to help them get their first product off the ground and raise a{" "}
           <a
             href="https://www.crunchbase.com/organization/paddle-3"
-            className="underline text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100 hover:no-underline"
+            className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
             target="_blank"
             rel="noreferrer"
           >
@@ -66,7 +89,7 @@ export default function About() {
         <p className="mb-4 text-lg leading-relaxed text-secondary">
           In 2017, I took my second job at{" "}
           <a
-            className="underline text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100 hover:no-underline"
+            className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
             href="https://tophat.com/"
             target="_blank"
             rel="noreferrer"
@@ -75,7 +98,7 @@ export default function About() {
           </a>{" "}
           right after they’d raised a{" "}
           <a
-            className="underline text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100 hover:no-underline"
+            className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
             href="https://www.crunchbase.com/organization/tophat"
             target="_blank"
             rel="noreferrer"
@@ -86,11 +109,11 @@ export default function About() {
           mobile app (iOS and Android), launched a new product called Top Hat
           Test (web), and led design for the Classroom Response team (web).
         </p>
-        <h2 className="pt-4 mb-4 text-lg font-bold">Joining Together</h2>
+        <h2 className="pt-4 mb-4 text-lg font-semibold">Joining Together</h2>
         <p className="mb-4 text-lg leading-relaxed text-secondary">
           In spring of 2019, I left Top Hat to join{" "}
           <a
-            className="underline text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100 hover:no-underline"
+            className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
             href="https://www.togetherplatform.com/"
             target="_blank"
             rel="noreferrer"
@@ -109,7 +132,7 @@ export default function About() {
           more. We’ve gone from an initial team of 4 to a team of &gt;15. We’ve
           raised a couple of{" "}
           <a
-            className="underline text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100 hover:no-underline"
+            className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
             href="https://www.crunchbase.com/organization/together-d62b"
             target="_blank"
             rel="noreferrer"
@@ -118,7 +141,7 @@ export default function About() {
           </a>{" "}
           and I’ve learned a tremendous amount about company building.
         </p>
-        <h2 className="pt-4 mb-4 text-lg font-bold">One Liners</h2>
+        <h2 className="pt-4 mb-4 text-lg font-semibold">One Liners</h2>
         <p className="mb-4 text-lg text-secondary">
           Good design gets out of the user’s way.
         </p>
@@ -132,7 +155,7 @@ export default function About() {
         <p className="mb-4 text-lg text-secondary">
           Impatience with actions, patience with results.
         </p>
-        <h2 className="pt-4 mb-4 text-lg font-bold">Making This Site</h2>
+        <h2 className="pt-4 mb-4 text-lg font-semibold">Making This Site</h2>
         <p className="mb-4 text-lg text-secondary">
           I built this website using Keystone and Next.js. I used Tailwind to
           create my styles. It’s probably a bit over engineered, but it was fun

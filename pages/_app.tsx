@@ -2,9 +2,12 @@ import "../styles/tailwind-custom.css"
 import "../styles/fonts.css"
 import { useEffect } from "react"
 
+import { AnimatePresence } from "framer-motion"
 import type { AppProps } from "next/app"
 import { useRouter } from "next/router"
 
+import Footer from "../components/Footer"
+import Nav from "../components/Nav"
 import * as ga from "../lib/ga"
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -25,7 +28,18 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Nav />
+      <AnimatePresence
+        exitBeforeEnter
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Component {...pageProps} />
+      </AnimatePresence>
+      <Footer />
+    </>
+  )
 }
 
 export default MyApp

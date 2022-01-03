@@ -79,9 +79,11 @@ export default function PostPage({
       <SEO title={post.title} description={post.subtitle} />
       <BlogLayout>
         <main className="mt-4">
-          <div className="mb-4">
-            <Link href="/">
-              <a>&larr; back home</a>
+          <div className="mb-4 ">
+            <Link href="/#writing">
+              <a className="border-b border-gray-700 text-secondary">
+                &larr; Back to Posts
+              </a>
             </Link>
           </div>
           <h1 className="mb-4 font-serif text-5xl">{post.title}</h1>

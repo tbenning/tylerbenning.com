@@ -33,7 +33,7 @@ export default function SectionBlogList({ posts }: Props) {
                   </span>
                 </div>
               </div>
-              <ChevronRightIcon className="w-4 h-4 text-gray-400" />
+              <ChevronRightIcon className="w-4 h-4 text-tertiary" />
             </a>
           </Link>
         </li>

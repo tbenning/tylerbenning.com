@@ -78,13 +78,17 @@ export default function ProjectPage({
     <Layout>
       <SEO title={project.title} description={project.subtitle} />
       <ProjectLayout>
-        <main className="mt-4">
-          <div className="mb-4">
-            <Link href="/">
-              <a>&larr; back home</a>
+        <main className="mt-12">
+          <div className="mb-8">
+            <Link href="/#work">
+              <a className="border-b border-gray-700 text-secondary hover:bg-gray-100">
+                &larr; Back to Projects
+              </a>
             </Link>
           </div>
-          <h1 className="mb-4 font-serif text-5xl">{project.title}</h1>
+          <h1 className="pb-8 mb-8 text-6xl font-bold tracking-tight border-b leading-headers">
+            {project.title}
+          </h1>
           {project.content?.document && (
             <div className="prose prose-lg">
               <DocumentRenderer

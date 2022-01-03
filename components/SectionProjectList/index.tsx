@@ -17,32 +17,20 @@ type Props = {
 
 export default function SectionProjectList({ projects }: Props) {
   return (
-    <ul className="flex flex-col flex-wrap overflow-hidden rounded-lg md:flex-row">
+    <ul className="grid grid-cols-1 md:grid-cols-1 gap-5">
       {projects.map((project) => (
-        <li key={project.id} className="w-full md:w-1/2">
+        <li key={project.id} className="flex items-center space-x-5">
           <Link href={`/project/${project.slug}`}>
-            <a
-              className="inline-block w-full p-6 h-80 transition duration-500 ease-in-out hover:opacity-80"
-              style={{ background: project.bgColor ? project.bgColor : "#333" }}
-            >
-              <h3
-                className={`font-serif text-2xl ${
-                  project.hasDarkBg ? `text-white` : `text-primary`
-                }`}
-              >
-                {project.title}
-              </h3>
-              <span
-                className={`${
-                  project.hasDarkBg
-                    ? `text-white text-opacity-80`
-                    : `text-secondary`
-                }`}
-              >
-                {project.subtitle}
-              </span>
-            </a>
+            <a className="inline-block w-full p-6 bg-gray-100 rounded-lg md:w-1/2 h-80 transition duration-500 ease-in-out hover:shadow-lg"></a>
           </Link>
+          <div>
+            <h3 className="text-xl font-semibold text-primary">
+              {project.title}
+            </h3>
+            <span className="inline-block text-secondary">
+              {project.subtitle}
+            </span>
+          </div>
         </li>
       ))}
     </ul>

@@ -21,6 +21,6 @@
 
 @layer components {
   .btn {
-    @apply inline-block rounded-sm shadow-md bg-blue-700 text-white px-5 py-3;
+    @apply inline-block rounded-sm shadow-md bg-gray-900 text-white px-5 py-3;
   }
 }

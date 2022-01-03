@@ -1,18 +1,29 @@
-import Nav from "../Nav"
+import { motion } from "framer-motion"
 
 type Props = {
   children: React.ReactNode
 }
 
+const variants = {
+  hidden: { opacity: 0, x: 0, y: -10 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: -100 },
+}
+
 export default function Layout({ children }: Props) {
   return (
-    <>
-      <Nav />
-      <div className="container mx-auto opacity-25 max-w-screen-xl animate-fadeIn">
-        <div className="px-4 md:px-10">
+    <motion.main
+      variants={variants}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      transition={{ type: "linear", duration: 0.5 }}
+    >
+      <div className="container mx-auto max-w-screen-lg">
+        <div className="px-4 lg:px-0">
           <main>{children}</main>
         </div>
       </div>
-    </>
+    </motion.main>
   )
 }

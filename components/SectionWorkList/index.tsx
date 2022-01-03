@@ -1,4 +1,3 @@
-import { ArrowNarrowRightIcon } from "@heroicons/react/solid"
 import Image from "next/image"
 
 import brainstationLogo from "../../public/img/work-logos/brainstation.png"
@@ -60,29 +59,35 @@ export default function SectionWorkList() {
             key={work.title}
             className="flex flex-col items-start justify-between p-3 md:items-center md:space-x-2 md:flex-row"
           >
-            <div className="flex items-center flex-column md:flex-row md:space-x-3">
-              <div className="hidden w-8 h-8 p-1 bg-white border rounded-full border-primary md:block">
-                <Image
-                  src={work.img}
-                  alt={`${work.title} logo`}
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <h3 className="font-semibold text-md">{work.title}</h3>
-            </div>
+            <EmployerItem title={work.title} src={work.img} />
             <div className="flex items-center justify-between w-full md:w-fit space-x-4">
               <span className="text-md text-secondary">{work.role}</span>
               <div className="flex items-center space-x-2">
                 <span className="font-mono text-md text-tertiary">
                   {work.date}
                 </span>
-                <ArrowNarrowRightIcon className="w-4 h-4 text-gray-400 -rotate-45" />
+                <span className="mb-1 leading-snug text-tertiary">↗</span>
               </div>
             </div>
           </div>
         </a>
       ))}
+    </div>
+  )
+}
+
+type EmployerItem = {
+  title: string
+  src: StaticImageData
+}
+
+export function EmployerItem({ title, src }: EmployerItem) {
+  return (
+    <div className="flex items-center flex-column md:flex-row md:space-x-3">
+      <div className="hidden w-8 h-8 p-1 bg-white border rounded-full border-primary md:block">
+        <Image src={src} alt={`${title} logo`} width={24} height={24} />
+      </div>
+      <h3 className="font-semibold text-md">{title}</h3>
     </div>
   )
 }

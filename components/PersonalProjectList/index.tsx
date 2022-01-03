@@ -24,38 +24,15 @@ type Props = {
 
 export default function PersonalProjectList({ projects }: Props) {
   return (
-    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-10">
       {projects.map((project) => (
-        <li
-          key={project.id}
-          className="overflow-hidden rounded-lg transition duration-500 ease-in-out hover:opacity-80 hover:translate-y-1"
-        >
+        <li key={project.id}>
           <Link href={`/project/${project.slug}`}>
-            <a
-              className="relative inline-block w-full pt-6 pl-6 h-80"
-              style={{ background: project.bgColor ? project.bgColor : "#333" }}
-            >
-              <h3
-                className={`font-serif text-xl ${
-                  project.hasDarkBg ? `text-white` : `text-primary`
-                }`}
-              >
-                {project.title}
-              </h3>
-              <span
-                className={`text-sm ${
-                  project.hasDarkBg
-                    ? `text-white text-opacity-80`
-                    : `text-secondary`
-                }`}
-              >
-                {project.subtitle}
-              </span>
-
+            <a className="relative inline-block w-full h-48 pt-8 pl-8 mb-4 overflow-hidden bg-gray-100 rounded-lg transition duration-300 ease-in-out hover:shadow-lg">
               {project.featuredImage?.image?.url && (
                 <div
                   className="absolute overflow-hidden rounded-tl-3xl"
-                  style={{ top: "120px", width: "200%" }}
+                  style={{ top: "40px", width: "200%" }}
                 >
                   <Image
                     src={project.featuredImage?.image?.url}
@@ -67,6 +44,17 @@ export default function PersonalProjectList({ projects }: Props) {
                   />
                 </div>
               )}
+            </a>
+          </Link>
+          <h3 className={`font-semibold text-lg text-primary mb-1`}>
+            {project.title}
+          </h3>
+          <span className={"block text-sm text-secondary mb-1"}>
+            {project.subtitle}
+          </span>
+          <Link href={`/project/${project.slug}`}>
+            <a className="inline-block text-sm border-b border-darkseafoam text-darkseafoam hover:bg-gray-100">
+              Read More →
             </a>
           </Link>
         </li>

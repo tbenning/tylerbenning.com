@@ -24,11 +24,11 @@ type Props = {
 
 export default function PersonalProjectList({ projects }: Props) {
   return (
-    <ul className="flex flex-wrap overflow-hidden rounded-lg">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-5">
       {projects.map((project) => (
         <li
           key={project.id}
-          className="w-full overflow-hidden md:w-1/2 lg:w-1/4 transition duration-500 ease-in-out hover:opacity-80 hover:translate-y-1"
+          className="overflow-hidden rounded-lg transition duration-500 ease-in-out hover:scale-105 hover:translate-y-1"
         >
           <Link href={`/project/${project.slug}`}>
             <a
@@ -36,7 +36,7 @@ export default function PersonalProjectList({ projects }: Props) {
               style={{ background: project.bgColor ? project.bgColor : "#333" }}
             >
               <h3
-                className={`font-serif text-xl ${
+                className={`font-semibold text-lg ${
                   project.hasDarkBg ? `text-white` : `text-primary`
                 }`}
               >
