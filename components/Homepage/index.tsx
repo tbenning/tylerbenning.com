@@ -42,6 +42,8 @@ type Props = {
       isPublished: boolean
       bgColor: string
       hasDarkBg: boolean
+      timeline: string
+      company: string
       featuredImage: {
         alt: string
         image: {
@@ -151,21 +153,6 @@ export default function Homepage({ posts, projects }: Props) {
       <FadeIn>
         <section className="mx-auto mb-10 md:mb-20">
           <SectionHeader
-            title="Fun Projects"
-            subtitle="Things I built for fun and favours"
-            icon={
-              <div className="transition duration-1000 ease-linear hover:scale-150">
-                <SquirqleIcon />
-              </div>
-            }
-          />
-          <PersonalProjectList projects={personalProjects} />
-        </section>
-      </FadeIn>
-
-      <FadeIn>
-        <section className="mx-auto mb-10 md:mb-20">
-          <SectionHeader
             title="Work Projects"
             subtitle="Tidbits and snippets of projects over time"
             icon={
@@ -175,6 +162,21 @@ export default function Homepage({ posts, projects }: Props) {
             }
           />
           <SectionProjectList projects={workProjects} />
+        </section>
+      </FadeIn>
+
+      <FadeIn>
+        <section className="mx-auto mb-10 md:mb-20">
+          <SectionHeader
+            title="Fun Projects"
+            subtitle="Things I built for fun and favours"
+            icon={
+              <div className="transition duration-1000 ease-linear hover:scale-150">
+                <SquirqleIcon />
+              </div>
+            }
+          />
+          <PersonalProjectList projects={personalProjects} />
         </section>
       </FadeIn>
     </>

@@ -63,7 +63,7 @@ export default function SectionWorkList() {
             <div className="flex items-center justify-between w-full md:w-fit space-x-4">
               <span className="text-md text-secondary">{work.role}</span>
               <div className="flex items-center space-x-2">
-                <span className="font-mono text-md text-tertiary">
+                <span className="font-mono text-sm text-tertiary">
                   {work.date}
                 </span>
                 <span className="mb-1 leading-snug text-tertiary">↗</span>

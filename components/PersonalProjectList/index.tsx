@@ -26,14 +26,11 @@ export default function PersonalProjectList({ projects }: Props) {
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-10">
       {projects.map((project) => (
-        <li key={project.id}>
+        <li key={project.id} className="pb-6  border-b-2">
           <Link href={`/project/${project.slug}`}>
             <a className="relative inline-block w-full h-48 pt-8 pl-8 mb-4 overflow-hidden bg-gray-100 rounded-lg transition duration-300 ease-in-out hover:shadow-lg">
               {project.featuredImage?.image?.url && (
-                <div
-                  className="absolute overflow-hidden rounded-tl-3xl"
-                  style={{ top: "40px", width: "200%" }}
-                >
+                <div className="absolute w-full overflow-hidden rounded-tl-3xl top-10">
                   <Image
                     src={project.featuredImage?.image?.url}
                     alt={project.featuredImage?.alt}

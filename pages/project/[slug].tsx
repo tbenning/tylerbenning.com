@@ -90,7 +90,7 @@ export default function ProjectPage({
             {project.title}
           </h1>
           {project.content?.document && (
-            <div className="prose prose-lg">
+            <div className="prose prose-lg prose-a:no-underline prose-a:text-darkseafoam prose-a:border-b prose-a:border-darkseafoam hover:prose-a:bg-gray-100">
               <DocumentRenderer
                 document={project.content.document}
                 renderers={renderers}
@@ -127,7 +127,8 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 export async function getStaticProps({ params }: GetStaticPropsContext) {
   const project = await query.Project.findOne({
     where: { slug: params!.slug as string },
-    query: "id title content {document (hydrateRelationships: true)}",
+    query:
+      "id title timeline company content {document (hydrateRelationships: true)}",
   })
   return { props: { project } }
 }

@@ -2,7 +2,7 @@ export default function Footer() {
   const getYear = new Date().getFullYear()
   return (
     <footer className="border-t">
-      <div className="container flex flex-wrap items-baseline justify-between px-4 pt-6 pb-12 mx-auto space-y-3 md:space-y-0 md:flex-nowrap lg:px-0 max-w-screen-lg">
+      <div className="container flex flex-wrap items-baseline justify-between px-4 pt-6 pb-12 mx-auto  space-y-3 md:space-y-0 md:flex-nowrap lg:px-0 max-w-screen-lg">
         <ul className="flex items-center text-sm text-secondary space-x-3 ">
           <li>© {getYear}</li>
           <li className="text-gray-400">&bull;</li>

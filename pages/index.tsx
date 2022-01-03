@@ -3,7 +3,6 @@ import { InferGetStaticPropsType } from "next"
 import Homepage from "../components/Homepage"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-// Import the generated Lists API from Keystone
 import { query } from ".keystone/api"
 
 type Post = {
@@ -21,6 +20,8 @@ type Project = {
   bgColor: string
   hasDarkBg: boolean
   projectType: string
+  company: string
+  timeline: string
   featuredImage: {
     alt: string
     image: {
@@ -48,7 +49,7 @@ export async function getStaticProps() {
   const posts = await query.Post.findMany({ query: "id title slug subtitle" })
   const projects = await query.Project.findMany({
     query:
-      "id title slug projectType subtitle isPublished bgColor hasDarkBg featuredImage { alt image { url }}",
+      "id title slug company timeline projectType subtitle isPublished bgColor hasDarkBg featuredImage { alt image { url }}",
   })
   return { props: { posts, projects } }
 }

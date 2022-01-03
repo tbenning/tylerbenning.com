@@ -38,11 +38,13 @@ export default function About() {
       </div>
       <div className="max-w-3xl mx-auto mt-4 mb-20 md:mt-12 md:pt-16">
         <TriSquareIcon />
-        <h1 className="mt-4 mb-8 text-4xl antialiased font-bold">About</h1>
+        <h1 className="mt-4 mb-8 text-4xl antialiased font-bold text-primary">
+          About
+        </h1>
         <p className="mb-4 text-2xl antialiased leading-relaxed tracking-tight text-tertiary">
-          Hello! I'm product designer with front-end developer super powers.
-          While my primary craft is design, I spent the last few years learning
-          to closely collaborate in code with engineers — and I love it.
+          Hello, I'm Tyler! While my primary craft is design, I've spent the
+          last few years learning to closely collaborate in code with the
+          engineers I've worked with — and I love it.
         </p>
         <p className="mb-4 text-2xl antialiased leading-relaxed tracking-tight text-tertiary">
           I currently live in British Columbia, where you'll find me on the
@@ -161,6 +163,7 @@ export default function About() {
           create my styles. It’s probably a bit over engineered, but it was fun
           to learn.
         </p>
+        <hr className="my-8 border-t" />
       </div>
     </Layout>
   )
