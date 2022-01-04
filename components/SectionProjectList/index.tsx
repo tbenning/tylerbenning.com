@@ -35,7 +35,7 @@ export default function SectionProjectList({ projects }: Props) {
           <Link href={`/project/${project.slug}`}>
             <a className="flex w-full px-8 pt-8 overflow-hidden bg-gray-100 rounded-lg md:px-12 md:pt-12 flex-end md:w-1/2 lg:w-2/3 h-72 transition duration-500 ease-in-out hover:shadow-lg">
               {project?.featuredImage && (
-                <div className="flex overflow-hidden rounded-t-3xl">
+                <div className="flex overflow-hidden shadow-md rounded-t-md">
                   <Image
                     src={project.featuredImage.image.url}
                     alt={project.featuredImage.alt}

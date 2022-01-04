@@ -20,10 +20,7 @@
 }
 
 @layer components {
-  .btn-lt {
-    @apply inline-block text-center rounded-full text-sm transition duration-300 active:bg-gray-50 hover:bg-gray-200 ease-in-out bg-gray-100 focus:ring-2 focus:ring-gray-500 text-secondary px-4 py-2;
-  }
   .btn {
-    @apply inline-block text-center rounded-md text-sm shadow-md transition duration-100 active:bg-gray-600 ease-in-out hover:shadow-lg bg-gray-900 focus:ring-4 focus:ring-gray-300 text-white px-4 py-2;
+    @apply inline-block text-center border border-gray-700 rounded-md text-sm shadow-sm transition duration-200  active:bg-gray-600 ease-in-out hover:shadow-lg bg-gray-900 focus:ring-4 focus:ring-gray-300 text-white text-opacity-95 hover:text-opacity-100 px-4 py-2;
   }
 }

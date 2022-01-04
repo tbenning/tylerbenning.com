@@ -57,10 +57,11 @@ type Props = {
 function FadeIn({ children }: any) {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0, y: -10 }}
       whileInView={{
         opacity: 1,
-        transition: { ease: "linear", duration: 1 },
+        y: 0,
+        transition: { ease: "easeInOut", duration: 1 },
       }}
       viewport={{ once: false }}
     >

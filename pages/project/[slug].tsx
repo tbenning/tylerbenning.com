@@ -90,7 +90,7 @@ export default function ProjectPage({
             {project.title}
           </h1>
           {project.content?.document && (
-            <div className="prose prose-lg prose-a:no-underline prose-a:text-darkseafoam prose-a:border-b prose-a:border-darkseafoam hover:prose-a:bg-gray-100">
+            <div className="prose prose-lg prose-a:no-underline prose-h2:font-semibold prose-h2:text-3xl prose-h3:font-semibold prose-h3:text-xl prose-h4:text-lg prose-a:text-darkseafoam prose-a:border-b prose-a:border-darkseafoam hover:prose-a:bg-gray-100">
               <DocumentRenderer
                 document={project.content.document}
                 renderers={renderers}
