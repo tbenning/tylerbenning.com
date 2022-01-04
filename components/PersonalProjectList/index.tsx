@@ -2,24 +2,22 @@ import Image from "next/image"
 import Link from "next/link"
 
 type Props = {
-  projects: [
-    {
-      id: string
-      title: string
-      subtitle: string
-      slug: string
-      isPublished: boolean
-      bgColor: string
-      hasDarkBg: boolean
-      projectType: string
-      featuredImage: {
-        alt: string
-        image: {
-          url: string
-        }
+  projects: {
+    id: string
+    title: string
+    subtitle: string
+    slug: string
+    isPublished: boolean
+    bgColor: string
+    hasDarkBg: boolean
+    projectType: string
+    featuredImage: {
+      alt: string
+      image: {
+        url: string
       }
     }
-  ]
+  }[]
 }
 
 export default function PersonalProjectList({ projects }: Props) {
