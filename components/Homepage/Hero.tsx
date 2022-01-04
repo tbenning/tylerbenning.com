@@ -1,8 +1,8 @@
 import { motion } from "framer-motion"
 export default function Hero() {
   return (
-    <section className="relative px-8 pb-6 mb-0 overflow-hidden border border-t-0 md:px-12 md:pb-12 lg:overflow-visible lg:pl-12 lg:pr-0 rounded-b-3xl grid grid-cols-1 lg:grid-cols-2 lg:gap-4 lg:mb-0 lg:-mx-12 shadow-gray-100">
-      <div className="order-2 py-4 lg:py-32 lg:order-1">
+    <section className="relative px-0 pb-6 mb-0 overflow-hidden border border-t-0 md:px-12 md:pb-12 lg:overflow-visible lg:pl-12 lg:pr-0 rounded-b-3xl grid grid-cols-1 lg:grid-cols-2 lg:gap-4 lg:mb-0 lg:-mx-12 ">
+      <div className="order-2 px-8 py-4 lg:py-32 lg:order-1">
         <span className="inline-block mb-3 text-2xl lg:text-2xl text-tertiary">
           Hello, I'm Tyler —
         </span>
@@ -40,7 +40,7 @@ export default function Hero() {
         drag
         whileTap={{ rotate: 20, scale: 0.95 }}
         whileHover={{ scale: 1.02 }}
-        className="absolute bg-white border rounded-lg shadow-lg cursor-pointer shadow-gray-100 active:shadow-xl active:shadow-gray-100 active:shadow-sm hover:shadow-gray-100 hover:shadow-xl w-60 left-1/3 -top-60 md:w-80 lg:left-auto lg:right-32 lg:top-20 lg:w-auto"
+        className="absolute bg-white border rounded-lg cursor-pointer shadow-art active:shadow-art-active hover:shadow-art-hover w-60 left-1/3 -top-60 md:w-80 lg:left-auto lg:right-32 lg:top-20 lg:w-auto"
       />
     </section>
   )
