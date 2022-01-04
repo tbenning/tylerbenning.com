@@ -40,16 +40,14 @@ const componentBlockRenderers: InferRenderersForComponentBlocks<
     )
   },
   image: (props) => {
-    const imgUrl = props.image?.data?.image?.url
-    const altText = props.image?.data?.alt
+    const imgUrl = props?.image?.data.image.url
+    const altText = props?.image?.data.alt
+    const width = parseInt(props.width)
+    const height = parseInt(props.height)
+
     return (
       <div className="max-w-full max-h-full my-4">
-        <ImgZoom
-          src={imgUrl}
-          alt={altText}
-          width={props.width}
-          height={props.height}
-        />
+        <ImgZoom src={imgUrl} alt={altText} width={width} height={height} />
         <span className="text-sm text-tertiary">{props.caption}</span>
       </div>
     )
