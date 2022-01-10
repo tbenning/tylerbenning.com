@@ -7,21 +7,8 @@ import {
 
 export const componentBlocks = {
   quote: component({
-    component: ({ attribution, content }) => {
-      return (
-        <div
-          style={{
-            borderLeft: "3px solid #CBD5E0",
-            paddingLeft: 16,
-          }}
-        >
-          <div style={{ fontStyle: "italic", color: "#4A5568" }}>{content}</div>
-          <div style={{ fontWeight: "bold", color: "#718096" }}>
-            <NotEditable>— </NotEditable>
-            {attribution}
-          </div>
-        </div>
-      )
+    component: ({ content }) => {
+      return <div style={{ fontSize: 20 }}>{content}</div>
     },
     label: "Quote",
     props: {
@@ -30,10 +17,6 @@ export const componentBlocks = {
         placeholder: "Quote...",
         formatting: { inlineMarks: "inherit", softBreaks: "inherit" },
         links: "inherit",
-      }),
-      attribution: fields.child({
-        kind: "inline",
-        placeholder: "Attribution...",
       }),
     },
     chromeless: true,
