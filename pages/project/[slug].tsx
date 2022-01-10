@@ -67,6 +67,16 @@ const renderers: DocumentRendererProps["renderers"] = {
     paragraph: ({ children, textAlign }) => {
       return <p style={{ textAlign }}>{children}</p>
     },
+    layout: ({ children, layout }) => {
+      return (
+        // <div className={`grid grid-cols-2 gap-2`}>
+        <div className={`grid grid-cols-1 md:grid-cols-${layout.length} gap-4`}>
+          {children.map((child, i) => (
+            <div key={i}>{child}</div>
+          ))}
+        </div>
+      )
+    },
   },
 }
 
@@ -89,7 +99,7 @@ export default function ProjectPage({
             {project.title}
           </h1>
           {project.content?.document && (
-            <div className="prose prose-lg prose-a:no-underline prose-h2:font-semibold prose-h2:text-3xl prose-h3:font-semibold prose-h3:text-xl prose-h4:text-lg prose-a:text-darkseafoam prose-a:border-b prose-a:border-darkseafoam hover:prose-a:bg-gray-100">
+            <div className="prose prose-lg prose-a:no-underline prose-h2:font-semibold prose-h2:text-3xl prose-h3:font-semibold prose-h3:text-xl prose-h4:text-lg prose-h4:mt-0 prose-a:text-darkseafoam prose-a:border-b prose-a:border-darkseafoam hover:prose-a:bg-gray-100">
               <DocumentRenderer
                 document={project.content.document}
                 renderers={renderers}
