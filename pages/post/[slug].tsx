@@ -75,21 +75,39 @@ const renderers: DocumentRendererProps["renderers"] = {
 export default function PostPage({
   post,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  var options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }
+
+  const getFormattedDate = new Date(post.publishDate).toLocaleDateString(
+    "en-US",
+    options
+  )
   return (
     <Layout>
       <SEO title={post.title} description={post.subtitle} />
       <BlogLayout>
-        <main className="mt-4">
-          <div className="mb-4 ">
+        <main className="mt-12">
+          <div className="mb-8 ">
             <Link href="/#writing">
-              <a className="border-b border-gray-700 text-secondary">
+              <a className="border-b border-gray-700 text-secondary hover:bg-gray-100">
                 &larr; Back to Posts
               </a>
             </Link>
           </div>
-          <h1 className="mb-4 font-serif text-5xl">{post.title}</h1>
+          <h1 className="mb-6 text-6xl font-bold tracking-tight leading-headers">
+            {post.title}
+          </h1>
+          {getFormattedDate && (
+            <span className="block pb-8 mb-8 text-xl border-b text-tertiary">
+              {getFormattedDate}
+            </span>
+          )}
           {post.content?.document && (
-            <div className="prose prose-lg">
+            <div className="prose prose-lg prose-a:no-underline prose-h2:font-semibold prose-h2:text-3xl prose-h3:font-semibold prose-h3:text-xl prose-h4:text-lg prose-a:text-darkseafoam prose-a:border-b prose-a:border-darkseafoam hover:prose-a:bg-gray-100">
               <DocumentRenderer
                 document={post.content.document}
                 renderers={renderers}
@@ -126,7 +144,8 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 export async function getStaticProps({ params }: GetStaticPropsContext) {
   const post = await query.Post.findOne({
     where: { slug: params!.slug as string },
-    query: "id title content {document (hydrateRelationships: true)}",
+    query:
+      "id title publishDate content {document (hydrateRelationships: true)}",
   })
   return { props: { post } }
 }
