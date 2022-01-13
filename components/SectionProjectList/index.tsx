@@ -53,14 +53,19 @@ export default function SectionProjectList({ projects }: Props) {
             <h3 className="mb-1 text-xl font-semibold text-primary">
               {project.title}
             </h3>
-            <span className="block mb-3 text-secondary">
+            <span className="block mb-1 antialiased font-system text-secondary">
               {project.subtitle}
             </span>
             <Link href={`/project/${project.slug}`}>
+              <a className="inline-block antialiased border-b text-md font-system border-darkseafoam text-darkseafoam hover:bg-gray-100">
+                View Case Study →
+              </a>
+            </Link>
+            {/* <Link href={`/project/${project.slug}`}>
               <a className="w-full text-center md:text-left md:w-auto btn">
                 View Case Study
               </a>
-            </Link>
+            </Link> */}
           </div>
         </li>
       ))}

@@ -111,7 +111,7 @@ export default function Homepage({ posts, projects }: Props) {
               icon={<BriefcaseIcon className="w-4 h-5 text-yellow-700" />}
             />
             <Capsule
-              text="Marketing"
+              text="Brand &amp; Marketing"
               className="m-1 hover:-rotate-1"
               icon={<FilterIcon className="w-4 h-5 text-indigo-500" />}
             />

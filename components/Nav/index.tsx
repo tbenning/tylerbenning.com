@@ -16,7 +16,7 @@ export default function Nav() {
     <nav className="sticky top-0 z-10 bg-white border-b border-primary">
       <div className="container flex items-center justify-between w-full px-4 pt-2 pb-2 mx-auto bg-white lg:px-0 max-w-screen-lg md:flex-row">
         <Link href="/">
-          <a className="hidden py-1 my-1 mr-0 font-serif border-b border-gray-700 border-opacity-0 hover:border-opacity-100 md:mr-6 md:inline-block text-secondary">
+          <a className="hidden py-1 my-1 mr-0 font-sans text-sm antialiased font-semibold border-b border-gray-700 border-opacity-0 hover:border-opacity-100 md:mr-6 md:inline-block text-secondary">
             Tyler&nbsp;Benning
           </a>
         </Link>
