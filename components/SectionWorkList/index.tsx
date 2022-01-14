@@ -61,7 +61,7 @@ export default function SectionWorkList() {
           >
             <EmployerItem title={work.title} src={work.img} />
             <div className="flex items-center justify-between w-full md:w-fit space-x-4">
-              <span className="antialiased text-md font-system text-secondary">
+              <span className="font-serif antialiased text-md text-secondary">
                 {work.role}
               </span>
               <div className="flex items-center space-x-2">

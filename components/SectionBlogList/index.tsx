@@ -28,7 +28,7 @@ export default function SectionBlogList({ posts }: Props) {
                   <h3 className="antialiased font-semibold text-md text-primary">
                     {post.title}
                   </h3>
-                  <span className="antialiased text-md font-system text-secondary">
+                  <span className="font-serif antialiased text-md text-secondary">
                     {post.subtitle}
                   </span>
                 </div>

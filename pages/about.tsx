@@ -66,7 +66,7 @@ export default function About() {
         </ul>
         <hr className="my-8 border-t" />
         <h2 className="mb-4 text-lg font-semibold">Early Career Stuff</h2>
-        <p className="mb-4 text-lg leading-relaxed text-secondary">
+        <p className="mb-4 font-serif text-xl antialiased leading-relaxed -tracking-[.005em] text-secondary">
           In 2015, I started my design career at an IBM design studio in
           downtown Toronto, with 20 or so other designers. I designed enterprise
           risk management tools for the OpenPages team. In some of my evenings
@@ -89,7 +89,7 @@ export default function About() {
             seed round.
           </a>
         </p>
-        <p className="mb-4 text-lg leading-relaxed text-secondary">
+        <p className="mb-4 font-serif text-xl antialiased leading-relaxed -tracking-[.005em] text-secondary">
           In 2017, I took my second job at{" "}
           <a
             className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
@@ -113,7 +113,7 @@ export default function About() {
           Test (web), and led design for the Classroom Response team (web).
         </p>
         <h2 className="pt-4 mb-4 text-lg font-semibold">Joining Together</h2>
-        <p className="mb-4 text-lg leading-relaxed text-secondary">
+        <p className="mb-4 font-serif text-xl antialiased leading-relaxed -tracking-[.005em] text-secondary">
           In spring of 2019, I left Top Hat to join{" "}
           <a
             className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
@@ -129,7 +129,7 @@ export default function About() {
           the four of us moved to Palo Alto into a hackerhouse for the summer to
           build product, talk to users, get customers, and prepare for demo day.
         </p>
-        <p className="mb-4 text-lg leading-relaxed text-secondary">
+        <p className="mb-4 font-serif text-xl antialiased leading-relaxed -tracking-[.005em] text-secondary">
           Since then, Together has grown &gt;50x since I joined, acquired big
           name customers including Disney, 7-11, AirBnb, Heineken, and a bunch
           more. We’ve gone from an initial team of 4 to a team of &gt;15. We’ve
@@ -145,24 +145,25 @@ export default function About() {
           and I’ve learned a tremendous amount about company building.
         </p>
         <h2 className="pt-4 mb-4 text-lg font-semibold">One Liners</h2>
-        <p className="mb-4 text-lg text-secondary">
+        <p className="mb-4 font-serif text-xl antialiased -tracking-[.005em] text-secondary">
           Good design gets out of the user’s way.
         </p>
-        <p className="mb-4 text-lg text-secondary">
+        <p className="mb-4 font-serif text-xl antialiased -tracking-[.005em] text-secondary">
           Building good product is a team sport.
         </p>
-        <p className="mb-4 text-lg text-secondary">
+        <p className="mb-4 font-serif text-xl antialiased -tracking-[.005em] text-secondary">
           Talk to users and ship product.
         </p>
-        <p className="mb-4 text-lg text-secondary">Ship to learn.</p>
-        <p className="mb-4 text-lg text-secondary">
+        <p className="mb-4 font-serif text-xl antialiased -tracking-[.005em] text-secondary">
+          Ship to learn.
+        </p>
+        <p className="mb-4 font-serif text-xl antialiased -tracking-[.005em] text-secondary">
           Impatience with actions, patience with results.
         </p>
         <h2 className="pt-4 mb-4 text-lg font-semibold">Making This Site</h2>
-        <p className="mb-4 text-lg text-secondary">
+        <p className="mb-4 font-serif text-xl antialiased -tracking-[.005em] text-secondary">
           I built this website using Keystone and Next.js. I used Tailwind to
-          create my styles. It’s probably a bit over engineered, but it was fun
-          to learn.
+          create my styles. It’s using neat new web tools and was fun to learn.
         </p>
       </div>
     </Layout>
