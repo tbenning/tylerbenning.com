@@ -55,13 +55,19 @@ export default function About() {
         <ul className="flex items-baseline space-x-4">
           <li className="text-sm text-secondary">Find me on</li>
           <li>
-            <ExternalLink href="#" title="LinkedIn" />
+            <ExternalLink
+              href="https://www.linkedin.com/in/tylerbenning/"
+              title="LinkedIn"
+            />
           </li>
           <li>
-            <ExternalLink href="#" title="Dribbble" />
+            <ExternalLink
+              href="https://dribbble.com/tbenning"
+              title="Dribbble"
+            />
           </li>
           <li>
-            <ExternalLink href="#" title="GitHub" />
+            <ExternalLink href="https://github.com/tbenning" title="GitHub" />
           </li>
         </ul>
         <hr className="my-8 border-t" />
