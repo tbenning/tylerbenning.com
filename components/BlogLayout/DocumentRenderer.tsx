@@ -35,6 +35,13 @@ const renderers: DocumentRendererProps["renderers"] = {
     bold: ({ children }) => {
       return <strong>{children}</strong>
     },
+    link: ({ children, href }) => {
+      return (
+        <a href={href} target="_blank" rel="noreferrer">
+          {children}
+        </a>
+      )
+    },
   },
 
   block: {
