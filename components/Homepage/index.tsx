@@ -30,6 +30,7 @@ type Props = {
       title: string
       subtitle: string
       slug: string
+      publishDate: Date
     }
   ]
   projects: [

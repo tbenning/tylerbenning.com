@@ -37,10 +37,12 @@ export default function ProjectPage({
             {project.title}
           </h1>
           <div className="flex items-center space-x-8">
-            <div>
-              <h2 className="font-semibold text-md">Company</h2>
-              <span className="text-md text-tertiary">{project.company}</span>
-            </div>
+            {project.company && (
+              <div>
+                <h2 className="font-semibold text-md">Company</h2>
+                <span className="text-md text-tertiary">{project.company}</span>
+              </div>
+            )}
             <div>
               <h2 className="font-semibold text-md">Timeline</h2>
               <span className="text-md text-tertiary">{project.timeline}</span>

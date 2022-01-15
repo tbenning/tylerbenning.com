@@ -8,11 +8,20 @@ type Props = {
       title: string
       subtitle: string
       slug: string
+      publishDate: Date
     }
   ]
 }
 
 export default function SectionBlogList({ posts }: Props) {
+  function getFormattedDate(date) {
+    const formattedDate = new Date(date).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+    return formattedDate
+  }
   return (
     <ul className="border rounded-lg border-primary">
       {posts.map((post) => (
@@ -28,8 +37,8 @@ export default function SectionBlogList({ posts }: Props) {
                   <h3 className="antialiased font-semibold text-md text-primary">
                     {post.title}
                   </h3>
-                  <span className="font-serif antialiased text-md text-secondary">
-                    {post.subtitle}
+                  <span className="inline-block font-serif text-sm antialiased text-secondary">
+                    {getFormattedDate(post.publishDate)}
                   </span>
                 </div>
               </div>
