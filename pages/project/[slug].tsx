@@ -19,19 +19,34 @@ export default function ProjectPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
-      <SEO title={project.title} description={project.subtitle} />
+      <SEO
+        title={project.title}
+        description={project.subtitle}
+        og="og-project.png"
+      />
       <ProjectLayout>
         <main className="mt-12">
           <div className="mb-8">
             <Link href="/#work">
-              <a className="font-serif border-b border-gray-700 text-secondary hover:bg-gray-100">
+              <a className="font-serif text-lg border-b border-gray-700 text-secondary hover:bg-gray-100">
                 &larr; Back to Projects
               </a>
             </Link>
           </div>
-          <h1 className="pb-8 mb-8 text-6xl font-bold tracking-tight border-b leading-headers">
+          <h1 className="mb-8 text-6xl font-bold tracking-tight leading-headers">
             {project.title}
           </h1>
+          <div className="flex items-center space-x-8">
+            <div>
+              <h2 className="font-semibold text-md">Company</h2>
+              <span className="text-md text-tertiary">{project.company}</span>
+            </div>
+            <div>
+              <h2 className="font-semibold text-md">Timeline</h2>
+              <span className="text-md text-tertiary">{project.timeline}</span>
+            </div>
+          </div>
+          <hr className="my-8 border-primary" />
           {project.content?.document && (
             <ProseContainer>
               <DocumentRenderer content={project} />

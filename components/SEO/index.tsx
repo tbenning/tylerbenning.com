@@ -9,7 +9,7 @@ type SEOProps = {
 export default function SEO({
   title = "Tyler Benning",
   og = "og-home.png",
-  description = "Tyler Benning is a product designer who fiddles with front end code.",
+  description = "Tyler Benning is a product designer with front end superpowers",
 }: SEOProps) {
   return (
     <Head>
@@ -21,13 +21,13 @@ export default function SEO({
       <meta property="og:site_name" content="Tyler Benning" />
       <meta
         property="og:image"
-        content={`https://tylerbenning.com/images/meta/${og}`}
+        content={`https://tylerbenning.com/meta/${og}`}
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta
         property="twitter:image"
-        content={`https://tylerbenning.com/images/meta/${og}`}
+        content={`https://tylerbenning.com/meta/${og}`}
       />
 
       <meta property="twitter:card" content="summary_large_image" />

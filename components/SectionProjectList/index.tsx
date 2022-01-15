@@ -53,7 +53,7 @@ export default function SectionProjectList({ projects }: Props) {
             <h3 className="mb-1 text-xl font-semibold text-primary">
               {project.title}
             </h3>
-            <span className="block mb-1 font-serif text-lg antialiased text-secondary">
+            <span className="block mb-1 font-serif antialiased text-md text-secondary">
               {project.subtitle}
             </span>
             <Link href={`/project/${project.slug}`}>

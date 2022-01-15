@@ -46,13 +46,13 @@ export default function PersonalProjectList({ projects }: Props) {
           </h3>
           <span
             className={
-              "block text-lg font-serif text-secondary antialiased mb-1"
+              "block text-md font-serif text-secondary antialiased mb-1"
             }
           >
             {project.subtitle}
           </span>
           <Link href={`/project/${project.slug}`}>
-            <a className="inline-block font-serif border-b text-md border-darkseafoam text-darkseafoam hover:bg-gray-100">
+            <a className="inline-block font-serif antialiased border-b text-md border-darkseafoam text-darkseafoam hover:bg-gray-100">
               Read More →
             </a>
           </Link>

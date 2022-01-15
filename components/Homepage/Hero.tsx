@@ -11,7 +11,7 @@ export default function Hero() {
         </h1>
       </div>
 
-      <div className="relative z-0 order-1 overflow-hidden lg:order-2">
+      <div className="relative order-1 overflow-hidden -z-10 lg:order-2">
         <div className="inset-y-0 -mt-36 lg:-mt-40 lg:-mr-32">
           <motion.img
             src="img/bg-circle.svg"
