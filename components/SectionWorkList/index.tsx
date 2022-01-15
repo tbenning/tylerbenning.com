@@ -61,9 +61,7 @@ export default function SectionWorkList() {
           >
             <EmployerItem title={work.title} src={work.img} />
             <div className="flex items-center justify-between w-full md:w-fit space-x-4">
-              <span className="font-serif antialiased text-md text-secondary">
-                {work.role}
-              </span>
+              <span className="text-sm text-secondary">{work.role}</span>
               <div className="flex items-center space-x-2">
                 <span className="font-mono text-sm text-tertiary">
                   {work.date}
@@ -89,7 +87,7 @@ export function EmployerItem({ title, src }: EmployerItem) {
       <div className="hidden w-8 h-8 p-1 bg-white border rounded-full border-primary md:block">
         <Image src={src} alt={`${title} logo`} width={24} height={24} />
       </div>
-      <h3 className="antialiased font-semibold text-md">{title}</h3>
+      <h3 className="font-semibold text-md">{title}</h3>
     </div>
   )
 }

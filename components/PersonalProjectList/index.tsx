@@ -26,7 +26,7 @@ export default function PersonalProjectList({ projects }: Props) {
       {projects.map((project) => (
         <li key={project.id} className="pb-6  border-b-2">
           <Link href={`/project/${project.slug}`}>
-            <a className="relative inline-block w-full h-48 pt-8 pl-8 mb-4 overflow-hidden bg-gray-100 rounded-lg transition duration-300 ease-in-out hover:shadow-lg">
+            <a className="relative inline-block w-full h-48 pt-8 pl-8 mb-4 overflow-hidden bg-gray-100 rounded-lg transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
               {project.featuredImage?.image?.url && (
                 <div className="absolute w-full overflow-hidden rounded-tl-3xl top-10">
                   <Image
@@ -44,15 +44,11 @@ export default function PersonalProjectList({ projects }: Props) {
           <h3 className={`font-semibold text-lg text-primary mb-1`}>
             {project.title}
           </h3>
-          <span
-            className={
-              "block text-md font-serif text-secondary antialiased mb-1"
-            }
-          >
+          <span className={"block text-md text-secondary  mb-1"}>
             {project.subtitle}
           </span>
           <Link href={`/project/${project.slug}`}>
-            <a className="inline-block font-serif antialiased border-b text-md border-darkseafoam text-darkseafoam hover:bg-gray-100">
+            <a className="inline-block border-b text-md border-darkseafoam text-darkseafoam hover:bg-gray-100">
               Read More →
             </a>
           </Link>

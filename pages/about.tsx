@@ -70,7 +70,7 @@ export default function About() {
             <ExternalLink href="https://github.com/tbenning" title="GitHub" />
           </li>
         </ul>
-        <hr className="my-8 border-t" />
+        <hr className="my-12 border-t" />
         <h2 className="mb-4 text-lg font-semibold">Early Career Stuff</h2>
         <p className="mb-4 font-serif text-xl antialiased leading-relaxed -tracking-[.005em] text-secondary">
           In 2015, I started my design career at an IBM design studio in
@@ -142,7 +142,7 @@ export default function About() {
           raised a couple of{" "}
           <a
             className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
-            href="https://www.crunchbase.com/organization/together-d62b"
+            href="https://betakit.com/together-lands-6-2-million-cad-to-pair-mentors-and-mentees-in-companies/"
             target="_blank"
             rel="noreferrer"
           >
