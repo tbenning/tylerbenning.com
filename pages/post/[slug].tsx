@@ -34,7 +34,7 @@ export default function PostPage({
         <main className="mt-12">
           <div className="mb-8 ">
             <Link href="/#writing">
-              <a className="font-serif text-lg border-b border-gray-700 text-secondary hover:bg-gray-100">
+              <a className="border-b border-gray-700 text-secondary hover:bg-gray-100">
                 &larr; Back to Posts
               </a>
             </Link>

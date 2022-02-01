@@ -41,13 +41,13 @@ export default function About() {
         <h1 className="mt-4 mb-8 text-4xl antialiased font-bold text-primary">
           About
         </h1>
-        <p className="mb-4 text-2xl antialiased leading-relaxed tracking-tight text-tertiary">
+        <p className="mb-4 text-xl antialiased leading-relaxed tracking-tight text-secondary">
           Hello, I'm Tyler and I've been working as a product designer for a
           number of years now. While my primary craft is design, I've spent the
           last few years working at a startup where I learned to closely
           collaborate in code with engineers — and I love it.
         </p>
-        <p className="mb-4 text-2xl antialiased leading-relaxed tracking-tight text-tertiary">
+        <p className="mb-4 text-xl antialiased leading-relaxed tracking-tight text-secondary">
           I currently live in British Columbia, where you'll find me on the
           mountain hiking or snowboarding. 🏔 🍁 🏂
         </p>
