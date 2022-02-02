@@ -169,7 +169,8 @@ export default function About() {
         <h2 className="pt-4 mb-4 text-lg font-semibold">Making This Site</h2>
         <p className="mb-4 font-serif text-xl antialiased -tracking-[.005em] text-secondary">
           I built this website using Keystone and Next.js. I used Tailwind to
-          create my styles. It’s using neat new web tools and was fun to learn.
+          create my styles and Framer Motion for a bit of extra bounce. It was
+          fun to spend time trying out neat new web tools.
         </p>
       </div>
     </Layout>
