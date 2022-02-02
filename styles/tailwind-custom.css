@@ -24,3 +24,23 @@
     @apply inline-block text-center border border-gray-700 rounded-md text-sm shadow-sm transition duration-200  active:bg-gray-600 ease-in-out hover:shadow-lg bg-gray-900 focus:ring-4 focus:ring-gray-300 text-white text-opacity-95 hover:text-opacity-100 px-4 py-2;
   }
 }
+
+.effect-shine {
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.5) 20%,
+    rgb(0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.5) 80%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 5s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 100%;
+  }
+  to {
+    -webkit-mask-position: -100%;
+  }
+}

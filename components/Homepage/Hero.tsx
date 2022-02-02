@@ -7,7 +7,8 @@ export default function Hero() {
           Hello, I'm Tyler —
         </span>
         <h1 className="text-4xl antialiased font-bold tracking-tight lg:leading-headers md:text-5xl text-primary">
-          I'm a product designer with front-end superpowers
+          I'm a product designer with front-end{" "}
+          <span className="effect-shine">superpowers</span>
         </h1>
       </div>
 
