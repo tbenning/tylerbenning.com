@@ -40,8 +40,8 @@ export function PentaIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="46"
-      height="46"
+      width="24"
+      height="24"
       fill="none"
       viewBox="0 0 46 46"
     >
@@ -84,8 +84,8 @@ export function DiamondIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="53"
-      height="52"
+      width="26"
+      height="26"
       fill="none"
       viewBox="0 0 53 52"
     >
@@ -112,8 +112,8 @@ export function CircleIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
+      width="22"
+      height="22"
       fill="none"
       viewBox="0 0 40 40"
     >
@@ -153,8 +153,8 @@ export function SquirqleIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="42"
-      height="42"
+      width="24"
+      height="24"
       fill="none"
       viewBox="0 0 42 42"
     >

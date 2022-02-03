@@ -24,7 +24,7 @@ type Props = {
 
 export default function SectionProjectList({ projects }: Props) {
   return (
-    <ul className="pb-12 border-b-2 space-y-12">
+    <ul className="pb-12 space-y-12">
       {projects.map((project) => (
         <li
           key={project.id}
@@ -53,11 +53,11 @@ export default function SectionProjectList({ projects }: Props) {
             <h3 className="mb-1 text-xl font-semibold text-primary">
               {project.title}
             </h3>
-            <span className="block mb-1  text-md text-secondary">
+            <span className="block mb-1 text-md text-tertiary">
               {project.subtitle}
             </span>
             <Link href={`/project/${project.slug}`}>
-              <a className="w-full mt-2 btn md:w-auto">View Case Study</a>
+              <a className="w-full mt-2 btn-light md:w-auto">View Case Study</a>
             </Link>
           </div>
         </li>

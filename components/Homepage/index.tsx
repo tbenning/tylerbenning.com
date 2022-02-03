@@ -11,16 +11,10 @@ import { motion } from "framer-motion"
 
 import Capsule from "../Capsule"
 import PersonalProjectList from "../PersonalProjectList"
-import SectionBlogList from "../SectionBlogList"
-import SectionHeader from "../SectionHeader"
+import SectionBlogList from "../SectionBlogsList"
+import SectionHeader from "../SectionHeaderUpdate"
 import SectionProjectList from "../SectionProjectList"
-import SectionWorkList from "../SectionWorkList"
-import {
-  PentaIcon,
-  CircleIcon,
-  DiamondIcon,
-  SquirqleIcon,
-} from "../StripeIcons"
+import { DiamondIcon, SquirqleIcon, CircleIcon } from "../StripeIcons"
 import Hero from "./Hero"
 
 type Props = {
@@ -86,10 +80,10 @@ export default function Homepage({ posts, projects }: Props) {
       </FadeIn>
 
       <FadeIn>
-        <section className="max-w-3xl px-6 py-6 mx-auto mt-6 mb-10 text-center bg-white bg-gray-100  rounded-lg md:mb-20 md:mt-32 md:py-14 md:px-14">
-          <p className="text-2xl font-bold md:text-3xl text-primary">
-            Sometimes I like to jump into these roles too
-          </p>
+        <section className="max-w-3xl px-5 py-6 mx-auto mt-6 mb-10 text-center bg-white bg-gray-100 border-2 border-gray-200 border-dotted rounded-lg md:mb-20 md:mt-32 md:py-12 md:px-14">
+          <h2 className="text-xl font-bold md:text-2xl text-primary">
+            (But sometimes I jump into these roles too)
+          </h2>
           <div className="flex flex-wrap justify-center mt-6 -m-1">
             <Capsule
               text="Front End Development"
@@ -118,26 +112,11 @@ export default function Homepage({ posts, projects }: Props) {
             />
           </div>
         </section>
+        <a id="writing" />
       </FadeIn>
 
       <FadeIn>
-        <section className="max-w-3xl mx-auto mb-10 md:mb-20">
-          <SectionHeader
-            title="Where I've Worked"
-            subtitle="Where I've been for the last few years"
-            icon={
-              <div className="transition duration-1000 ease-in-out hover:-translate-y-2 hover:scale-150 hover:-rotate-12">
-                <PentaIcon />
-              </div>
-            }
-          />
-          <SectionWorkList />
-          <a id="writing" />
-        </section>
-      </FadeIn>
-
-      <FadeIn>
-        <section className="max-w-3xl mx-auto mb-10 md:mb-20">
+        <section className="mx-auto mb-10 md:mb-15">
           <SectionHeader
             title="Writing"
             subtitle="A smattering of tips, tricks, and thoughts from along the way"
@@ -147,6 +126,7 @@ export default function Homepage({ posts, projects }: Props) {
               </div>
             }
           />
+          <div className="pt-8" />
           <SectionBlogList posts={posts} />
           <a id="work" />
         </section>
@@ -163,6 +143,7 @@ export default function Homepage({ posts, projects }: Props) {
               </div>
             }
           />
+          <div className="pt-12" />
           <SectionProjectList projects={workProjects} />
         </section>
       </FadeIn>
@@ -173,11 +154,12 @@ export default function Homepage({ posts, projects }: Props) {
             title="Fun Projects"
             subtitle="Things I built for fun and favours"
             icon={
-              <div className="transition duration-1000 ease-linear hover:scale-150">
+              <div className="transition duration-1000 ease-in-out hover:-translate-y-2 hover:scale-150 hover:-rotate-12">
                 <SquirqleIcon />
               </div>
             }
           />
+          <div className="pt-12" />
           <PersonalProjectList projects={personalProjects} />
         </section>
       </FadeIn>

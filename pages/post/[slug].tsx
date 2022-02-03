@@ -39,11 +39,11 @@ export default function PostPage({
               </a>
             </Link>
           </div>
-          <h1 className="mb-6 text-6xl font-bold tracking-tight leading-headers">
+          <h1 className="mb-2 text-3xl font-bold tracking-tight md:mb-6 md:text-6xl leading-headers">
             {post.title}
           </h1>
           {getFormattedDate && (
-            <span className="block pb-8 mb-8 text-xl border-b text-tertiary">
+            <span className="block pb-8 mb-8 text-xl border-b-2 border-dotted text-tertiary">
               {getFormattedDate}
             </span>
           )}

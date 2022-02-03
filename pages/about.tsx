@@ -3,6 +3,7 @@ import Image from "next/image"
 
 import { ExternalLink } from "../components/Footer"
 import Layout from "../components/Layout"
+import SectionWorkList from "../components/SectionWorkList"
 import SEO from "../components/SEO"
 import { TriSquareIcon } from "../components/StripeIcons"
 
@@ -61,16 +62,18 @@ export default function About() {
             />
           </li>
           <li>
-            <ExternalLink
-              href="https://dribbble.com/tbenning"
-              title="Dribbble"
-            />
-          </li>
-          <li>
             <ExternalLink href="https://github.com/tbenning" title="GitHub" />
           </li>
+          <li>
+            <ExternalLink
+              href="https://twitter.com/tylerbenning_"
+              title="Twitter"
+            />
+          </li>
         </ul>
-        <hr className="my-12 border-t" />
+        <hr className="mb-12 border-t-2 border-dotted mt-14" />
+        <h2 className="mt-12 text-lg font-semibold">Where I've Worked</h2>
+        <SectionWorkList />
         <h2 className="mb-4 text-lg font-semibold">Early Career Stuff</h2>
         <p className="mb-4 font-serif text-xl antialiased leading-relaxed -tracking-[.005em] text-secondary">
           In 2015, I started my design career at an IBM design studio in

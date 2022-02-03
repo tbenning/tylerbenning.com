@@ -33,7 +33,7 @@ export default function ProjectPage({
               </a>
             </Link>
           </div>
-          <h1 className="mb-8 text-6xl font-bold tracking-tight leading-headers">
+          <h1 className="mb-6 text-3xl font-bold tracking-tight md:mb-8 md:text-6xl leading-headers">
             {project.title}
           </h1>
           <div className="flex items-center space-x-8">
@@ -48,7 +48,7 @@ export default function ProjectPage({
               <span className="text-md text-tertiary">{project.timeline}</span>
             </div>
           </div>
-          <hr className="my-8 border-primary" />
+          <hr className="my-8 border-t-2 border-b-0 border-dotted border-primary" />
           {project.content?.document && (
             <ProseContainer>
               <DocumentRenderer content={project} />

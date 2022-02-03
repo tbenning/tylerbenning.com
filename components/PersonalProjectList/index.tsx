@@ -24,7 +24,7 @@ export default function PersonalProjectList({ projects }: Props) {
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-10">
       {projects.map((project) => (
-        <li key={project.id} className="pb-6  border-b-2">
+        <li key={project.id} className="pb-6 border-b-2 border-dotted">
           <Link href={`/project/${project.slug}`}>
             <a className="relative inline-block w-full h-48 pt-8 pl-8 mb-4 overflow-hidden bg-gray-100 rounded-lg transition duration-300 ease-in-out hover:shadow-lg hover:scale-105">
               {project.featuredImage?.image?.url && (
@@ -44,7 +44,7 @@ export default function PersonalProjectList({ projects }: Props) {
           <h3 className={`font-semibold text-lg text-primary mb-1`}>
             {project.title}
           </h3>
-          <span className={"block text-md text-secondary  mb-1"}>
+          <span className={"block text-md text-tertiary mb-1"}>
             {project.subtitle}
           </span>
           <Link href={`/project/${project.slug}`}>

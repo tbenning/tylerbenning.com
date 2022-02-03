@@ -1,9 +1,9 @@
 import { motion } from "framer-motion"
 export default function Hero() {
   return (
-    <section className="relative px-0 pb-6 mb-0 overflow-hidden border border-t-0 md:px-12 md:pb-12 lg:overflow-visible lg:pl-12 lg:pr-0 rounded-b-3xl grid grid-cols-1 lg:grid-cols-2 lg:gap-4 lg:mb-0 lg:-mx-12 ">
+    <section className="relative px-0 pb-6 mb-0 overflow-hidden md:px-12 md:pb-12 lg:overflow-visible lg:pl-12 lg:pr-0 rounded-b-3xl grid grid-cols-1 lg:grid-cols-2 lg:gap-4 lg:mb-0 lg:-mx-12">
       <div className="order-2 px-8 py-4 md:px-0 lg:py-32 lg:order-1">
-        <span className="inline-block mb-3 text-2xl lg:text-2xl text-tertiary">
+        <span className="inline-block mt-4 mb-3 text-2xl lg:text-2xl text-tertiary">
           Hello, I'm Tyler —
         </span>
         <h1 className="text-4xl antialiased font-bold tracking-tight lg:leading-headers md:text-5xl text-primary">
@@ -12,7 +12,7 @@ export default function Hero() {
         </h1>
       </div>
 
-      <div className="relative order-1 overflow-hidden -z-10 lg:order-2">
+      <div className="relative order-1 -z-10 lg:order-2">
         <div className="inset-y-0 -mt-36 lg:-mt-40 lg:-mr-32">
           <motion.img
             src="img/bg-circle.svg"

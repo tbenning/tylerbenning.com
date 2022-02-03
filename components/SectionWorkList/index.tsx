@@ -9,7 +9,7 @@ import tophatLogo from "../../public/img/work-logos/top-hat.png"
 const workHistory = [
   {
     title: "Together",
-    role: "Founding Designer",
+    role: "Director of Design",
     date: "2019-\u00a0\u00a0",
     img: togetherLogo,
     url: "https://www.togetherplatform.com/",
@@ -46,12 +46,12 @@ const workHistory = [
 
 export default function SectionWorkList() {
   return (
-    <div className="mb-10 border rounded-lg md:mt-8 border-primary">
+    <div className="mt-5 mb-10 border-2 border-dotted rounded-lg border-primary">
       {workHistory.map((work) => (
         <a
           href={work.url}
           target="_blank"
-          className="block border-b first-of-type:rounded-t-lg last-of-type:rounded-b-lg last-of-type:border-0 border-primary transition duration-500 ease-in-out hover:bg-gray-100"
+          className="block border-b-2 border-dotted first-of-type:rounded-t-lg last-of-type:rounded-b-lg last-of-type:border-0 border-primary transition duration-500 ease-in-out hover:bg-gray-100"
           key={work.title}
           rel="noreferrer noopener"
         >
