@@ -23,7 +23,7 @@ export default function SectionBlogList({ posts }: Props) {
     return formattedDate
   }
   return (
-    <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
+    <div className="-mt-10 md:-mt-8 grid gap-4 grid-cols-1 md:grid-cols-3">
       <div className="col-span-1"></div>
       <div className="col-span-2">
         {posts.map((post) => (

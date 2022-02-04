@@ -7,10 +7,10 @@ type Props = {
 export default function Capsule({ text, className, icon }: Props) {
   return (
     <div
-      className={`border bg-white flex items-center border-solid border-primary rounded-full py-2 px-3 transition duration-300 ease-in-out hover:bg-gray-200 hover:cursor-default hover:border-transparent ${className}`}
+      className={`border bg-white flex items-center border-solid border-primary rounded-full py-2 px-4 transition duration-300 ease-in-out hover:cursor-default ${className}`}
     >
       {icon && <div className="mr-2">{icon}</div>}
-      <span className="text-sm text-secondary">{text}</span>
+      <span className="antialiased text-md text-secondary">{text}</span>
     </div>
   )
 }

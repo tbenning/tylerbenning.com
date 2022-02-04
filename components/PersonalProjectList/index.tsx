@@ -41,16 +41,17 @@ export default function PersonalProjectList({ projects }: Props) {
               )}
             </a>
           </Link>
-          <h3 className={`font-semibold text-lg text-primary mb-1`}>
+          <h3 className={`font-semibold text-xl text-primary mb-1`}>
             {project.title}
           </h3>
           <span className={"block text-md text-tertiary mb-1"}>
             {project.subtitle}
           </span>
           <Link href={`/project/${project.slug}`}>
-            <a className="inline-block border-b text-md border-darkseafoam text-darkseafoam hover:bg-gray-100">
+            <a className="mt-3 btn-light">Read More →</a>
+            {/* <a className="inline-block border-b text-md border-darkseafoam text-darkseafoam hover:bg-gray-100">
               Read More →
-            </a>
+            </a> */}
           </Link>
         </li>
       ))}

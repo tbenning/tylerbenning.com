@@ -84,8 +84,8 @@ export function DiamondIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="26"
-      height="26"
+      width="32"
+      height="32"
       fill="none"
       viewBox="0 0 53 52"
     >
@@ -112,8 +112,8 @@ export function CircleIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="22"
-      height="22"
+      width="26"
+      height="26"
       fill="none"
       viewBox="0 0 40 40"
     >
@@ -153,8 +153,8 @@ export function SquirqleIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="28"
+      height="28"
       fill="none"
       viewBox="0 0 42 42"
     >
