@@ -45,7 +45,7 @@ export default function SectionBlogList({ posts }: Props) {
                     </h3>
                     <p className="text-md text-tertiary">{post.subtitle}</p>
                   </div>
-                  <ArrowRightIcon className="flex-initial w-5 mr-4 text-gray-400 transition duration-300 ease-in-out group-hover:translate-x-2" />
+                  <ArrowRightIcon className="flex-initial w-5 h-5 mr-4 text-gray-400 transition duration-300 ease-in-out group-hover:translate-x-2" />
                 </div>
               </a>
             </Link>

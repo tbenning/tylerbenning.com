@@ -18,11 +18,10 @@ export default function Layout({ children }: Props) {
       animate="enter"
       exit="exit"
       transition={{ type: "linear", duration: 0.5 }}
+      className="overflow-x-hidden"
     >
       <div className="container mx-auto max-w-screen-lg">
-        <div className="px-4 lg:px-0">
-          <main>{children}</main>
-        </div>
+        <div className="px-4 lg:px-0">{children}</div>
       </div>
     </motion.main>
   )

@@ -14,7 +14,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" className="overflow-x-hidden">
+      <Html lang="en">
         <Head>
           <link
             href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
