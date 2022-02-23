@@ -48,10 +48,7 @@ export default function PersonalProjectList({ projects }: Props) {
             {project.subtitle}
           </span>
           <Link href={`/project/${project.slug}`}>
-            <a className="mt-3 btn-light">Read More →</a>
-            {/* <a className="inline-block border-b text-md border-darkseafoam text-darkseafoam hover:bg-gray-100">
-              Read More →
-            </a> */}
+            <a className="mt-3 btn-light">Read More</a>
           </Link>
         </li>
       ))}
