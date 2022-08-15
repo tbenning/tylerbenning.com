@@ -58,7 +58,7 @@ function FadeIn({ children }: any) {
         y: 0,
         transition: { ease: "easeInOut", duration: 1 },
       }}
-      viewport={{ once: false }}
+      viewport={{ once: true }}
     >
       {children}
     </motion.div>
