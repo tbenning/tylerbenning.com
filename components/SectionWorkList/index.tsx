@@ -1,8 +1,8 @@
 import Image from "next/image"
 
 import brainstationLogo from "../../public/img/work-logos/brainstation.png"
-import ibmLogo from "../../public/img/work-logos/ibm.png"
 import githubLogo from "../../public/img/work-logos/github-logo.png"
+import ibmLogo from "../../public/img/work-logos/ibm.png"
 import paddleLogo from "../../public/img/work-logos/paddle.png"
 import togetherLogo from "../../public/img/work-logos/together.png"
 import tophatLogo from "../../public/img/work-logos/top-hat.png"

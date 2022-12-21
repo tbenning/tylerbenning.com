@@ -49,8 +49,9 @@ export default function About() {
           collaborate in code with engineers — and I love it.
         </p>
         <p className="mb-4 text-xl antialiased leading-relaxed tracking-tight text-secondary">
-          I currently live in <del className="text-tertiary">British Columbia</del> Washington, where you'll find me on the
-          mountain hiking or snowboarding. 🏔 🍁 🏂
+          I currently live in{" "}
+          <del className="text-tertiary">British Columbia</del> Washington,
+          where you'll find me on the mountain hiking or snowboarding. 🏔 🍁 🏂
         </p>
 
         <ul className="flex items-baseline space-x-4">
