@@ -2,15 +2,23 @@ import Image from "next/image"
 
 import brainstationLogo from "../../public/img/work-logos/brainstation.png"
 import ibmLogo from "../../public/img/work-logos/ibm.png"
+import githubLogo from "../../public/img/work-logos/github-logo.png"
 import paddleLogo from "../../public/img/work-logos/paddle.png"
 import togetherLogo from "../../public/img/work-logos/together.png"
 import tophatLogo from "../../public/img/work-logos/top-hat.png"
 
 const workHistory = [
   {
+    title: "GitHub",
+    role: "Senior Design",
+    date: "2022-\u00a0\u00a0",
+    img: githubLogo,
+    url: "https://www.github.com/",
+  },
+  {
     title: "Together",
     role: "Director of Design",
-    date: "2019-\u00a0\u00a0",
+    date: "2019-2022",
     img: togetherLogo,
     url: "https://www.togetherplatform.com/",
   },
