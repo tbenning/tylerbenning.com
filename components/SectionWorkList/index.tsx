@@ -17,7 +17,7 @@ const workHistory = [
   },
   {
     title: "Together",
-    role: "Director of Design",
+    role: "Head of Design / Founding Designer",
     date: "2019-2022",
     img: togetherLogo,
     url: "https://www.togetherplatform.com/",
