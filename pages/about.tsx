@@ -53,7 +53,6 @@ export default function About() {
           <del className="text-tertiary">British Columbia</del> Washington,
           where you'll find me on the mountain hiking or snowboarding. 🏔 🍁 🏂
         </p>
-        2
         <ul className="flex items-baseline space-x-4">
           <li className="text-sm text-secondary">Find me on</li>
           <li>
