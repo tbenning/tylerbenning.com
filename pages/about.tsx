@@ -43,17 +43,17 @@ export default function About() {
           About
         </h1>
         <p className="mb-4 text-xl antialiased leading-relaxed tracking-tight text-secondary">
-          Hello, I'm Tyler and I've been working as a product designer for a
-          number of years now. While my primary craft is design, I've spent the
-          last few years working at a startup where I learned to closely
-          collaborate in code with engineers — and I love it.
+          I've been working as a product designer for a number of years, but I
+          like to collaborate in code with engineers, too. Lately, I've been
+          working on a design infrastructure team at GitHub, working closely
+          with the design systems team and product designers alike.
         </p>
         <p className="mb-4 text-xl antialiased leading-relaxed tracking-tight text-secondary">
           I currently live in{" "}
           <del className="text-tertiary">British Columbia</del> Washington,
           where you'll find me on the mountain hiking or snowboarding. 🏔 🍁 🏂
         </p>
-
+        2
         <ul className="flex items-baseline space-x-4">
           <li className="text-sm text-secondary">Find me on</li>
           <li>
@@ -122,7 +122,7 @@ export default function About() {
           mobile app (iOS and Android), launched a new product called Top Hat
           Test (web), and led design for the Classroom Response team (web).
         </p>
-        <h2 className="pt-4 mb-4 text-lg font-semibold">Joining Together</h2>
+        <h2 className="pt-4 mb-4 text-lg font-semibold">Working at Together</h2>
         <p className="mb-4 font-serif text-xl antialiased leading-relaxed -tracking-[.005em] text-secondary">
           In spring of 2019, I left Top Hat to join{" "}
           <a

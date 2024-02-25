@@ -10,7 +10,7 @@ import tophatLogo from "../../public/img/work-logos/top-hat.png"
 const workHistory = [
   {
     title: "GitHub",
-    role: "Senior Design",
+    role: "Senior Designer",
     date: "2022-\u00a0\u00a0",
     img: githubLogo,
     url: "https://www.github.com/",
