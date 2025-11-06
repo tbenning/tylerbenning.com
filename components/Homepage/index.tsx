@@ -144,7 +144,7 @@ export default function Homepage({ posts, projects }: Props) {
         </section>
       </FadeIn>
 
-      <FadeIn>
+      {/* <FadeIn>
         <section className="mx-auto mb-10 md:mb-20">
           <SectionHeader
             title="Fun Projects"
@@ -158,7 +158,7 @@ export default function Homepage({ posts, projects }: Props) {
           <div className="pt-12" />
           <PersonalProjectList projects={personalProjects} />
         </section>
-      </FadeIn>
+      </FadeIn> */}
     </>
   )
 }
