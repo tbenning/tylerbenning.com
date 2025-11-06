@@ -21,7 +21,7 @@ export default function ImgZoom({ src, alt, width, height }: Props) {
         alt={alt}
         width={width}
         height={height}
-        objectFit="scale-down"
+        style={{ objectFit: "scale-down" }}
       />
     </Zoom>
   )

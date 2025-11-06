@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image, { type StaticImageData } from "next/image"
 
 import brainstationLogo from "../../public/img/work-logos/brainstation.png"
 import githubLogo from "../../public/img/work-logos/github-logo.png"

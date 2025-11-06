@@ -34,7 +34,7 @@ export default function useWindowSize(): WindowSize {
 function useEventListener<T extends HTMLElement = HTMLDivElement>(
   eventName: keyof WindowEventMap | string, // string to allow custom event
   handler: (event: Event) => void,
-  element?: RefObject<T>
+  element?: RefObject<T>,
 ) {
   // Create a ref that stores handler
   const savedHandler = useRef<(event: Event) => void>()

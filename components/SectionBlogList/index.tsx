@@ -2,15 +2,13 @@ import { ChevronRightIcon, DocumentTextIcon } from "@heroicons/react/outline"
 import Link from "next/link"
 
 type Props = {
-  posts: [
-    {
-      id: string
-      title: string
-      subtitle: string
-      slug: string
-      publishDate: Date
-    }
-  ]
+  posts: {
+    id: string
+    title: string
+    subtitle: string
+    slug: string
+    publishDate: Date
+  }[]
 }
 
 export default function SectionBlogList({ posts }: Props) {
@@ -29,21 +27,22 @@ export default function SectionBlogList({ posts }: Props) {
           key={post.id}
           className="border-b border-primary last-of-type:border-0 last-of-type:rounded-b-lg first-of-type:rounded-t-lg transition duration-500 ease-in-out hover:bg-gray-100"
         >
-          <Link href={`/post/${post.slug}`}>
-            <a className="flex items-center justify-between w-full p-3 ">
-              <div className="flex items-start space-x-2">
-                <DocumentTextIcon className="w-6 h-6 text-gray-800" />
-                <div className="inline-block">
-                  <h3 className="font-semibold text-md text-primary">
-                    {post.title}
-                  </h3>
-                  <span className="inline-block text-sm text-tertiary">
-                    {getFormattedDate(post.publishDate)}
-                  </span>
-                </div>
+          <Link
+            href={`/post/${post.slug}`}
+            className="flex items-center justify-between w-full p-3 "
+          >
+            <div className="flex items-start space-x-2">
+              <DocumentTextIcon className="w-6 h-6 text-gray-800" />
+              <div className="inline-block">
+                <h3 className="font-semibold text-md text-primary">
+                  {post.title}
+                </h3>
+                <span className="inline-block text-sm text-tertiary">
+                  {getFormattedDate(post.publishDate)}
+                </span>
               </div>
-              <ChevronRightIcon className="w-4 h-4 text-tertiary" />
-            </a>
+            </div>
+            <ChevronRightIcon className="w-4 h-4 text-tertiary" />
           </Link>
         </li>
       ))}

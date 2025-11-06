@@ -16,9 +16,11 @@ export default function About() {
         description="About the life and times of Tyler"
       />
       <div className="relative">
-        <img
-          src="img/bg-circle.svg"
+        <Image
+          src="/img/bg-circle.svg"
           alt="circle with woodgrain"
+          width={400}
+          height={400}
           className="absolute right-0 -bottom-32 -z-10"
         />
         <div className="absolute top-0 right-44">

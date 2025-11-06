@@ -1,73 +1,40 @@
-// @ts-nocheck
-import {
-  DocumentRenderer,
-  DocumentRendererProps,
-} from "@keystone-6/document-renderer"
-import { InferRenderersForComponentBlocks } from "@keystone-6/fields-document/component-blocks"
-import { InferGetStaticPropsType } from "next"
+import { MDXRemote } from "next-mdx-remote"
+import type { MDXRemoteSerializeResult } from "next-mdx-remote"
 
-import ImgZoom from "../../components/ImgZoom"
-import { componentBlocks } from "../../lib/component-blocks"
+import Image from "../mdx/Image"
+import Quote from "../mdx/Quote"
 
-const componentBlockRenderers: InferRenderersForComponentBlocks<
-  typeof componentBlocks
-> = {
-  quote: (props) => {
-    return <p className="text-xl antialised text-tertiary">{props.content}</p>
+const components = {
+  img: (props: any) => <img {...props} alt={props.alt || ""} />,
+  a: ({ children, href }: { children: React.ReactNode; href?: string }) => (
+    <a href={href} target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  ),
+  p: ({
+    children,
+    ...props
+  }: {
+    children: React.ReactNode
+    [key: string]: any
+  }) => {
+    const style = props.style || {}
+    if (props.textAlign) {
+      style.textAlign = props.textAlign
+    }
+    return <p style={style}>{children}</p>
   },
-  image: (props) => {
-    const imgUrl = props?.image?.data.image.url
-    const altText = props?.image?.data.alt
-    const width = parseInt(props.width)
-    const height = parseInt(props.height)
-
-    return (
-      <div className="max-w-full max-h-full my-4">
-        <ImgZoom src={imgUrl} alt={altText} width={width} height={height} />
-        <span className="text-sm text-tertiary">{props.caption}</span>
-      </div>
-    )
-  },
+  strong: ({ children }: { children: React.ReactNode }) => (
+    <strong>{children}</strong>
+  ),
+  Image,
+  Quote,
 }
 
-const renderers: DocumentRendererProps["renderers"] = {
-  inline: {
-    bold: ({ children }) => {
-      return <strong>{children}</strong>
-    },
-    link: ({ children, href }) => {
-      return (
-        <a href={href} target="_blank" rel="noreferrer">
-          {children}
-        </a>
-      )
-    },
-  },
-
-  block: {
-    paragraph: ({ children, textAlign }) => {
-      return <p style={{ textAlign }}>{children}</p>
-    },
-    layout: ({ children, layout }) => {
-      return (
-        <div className={`grid grid-cols-1 md:grid-cols-${layout.length} gap-4`}>
-          {children.map((child, i) => (
-            <div key={i}>{child}</div>
-          ))}
-        </div>
-      )
-    },
-  },
+type DocumentRendererProps = {
+  content: MDXRemoteSerializeResult
 }
 
-export default function ProjectPage({
-  content,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  return (
-    <DocumentRenderer
-      document={content.content.document}
-      renderers={renderers}
-      componentBlocks={componentBlockRenderers}
-    />
-  )
+export default function DocumentRenderer({ content }: DocumentRendererProps) {
+  return <MDXRemote {...content} components={components} />
 }

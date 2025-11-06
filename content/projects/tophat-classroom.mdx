@@ -1,0 +1,113 @@
+---
+title: "Classroom Response on iOS"
+subtitle: "Product Design, User Research"
+slug: "tophat-classroom"
+projectType: "work"
+isPublished: 1
+hasDarkBg: 0
+timeline: "2018"
+company: "Top Hat"
+bgColor: "#eeeeee"
+featuredImage: "/img/uploaded/59fc4b2c-48e2-408e-b695-f28243a13f92.jpg"
+---
+
+<Image src="/img/uploaded/59fc4b2c-48e2-408e-b695-f28243a13f92.jpg" alt="mobile app preview" width="1800" height="1100" caption="Preview of Top Hat Classroom Response product" />
+
+## The Classroom Product’s History
+
+View the iOS App
+
+Classroom is Top Hat’s cornerstone product that helped catapult them towards product-market fit, high growth, and venture capital. Top Hat has displaced existing hardware clickers, in favour of using smartphones and web apps. To date, millions of students have used Top Hat in higher education institutions across the United States, Canada, and the UK. From the sound of it, everything in the product must be peachy, right?
+
+When I joined in 2017, Classroom had already been built. The issue was that crucial parts of the user experience had been neglected in a mad scramble for growth. This lead to **retention problems** because the feature set had become complex, bloated, and basic expectations of usability weren’t being met. The same sad story has befell many products. We needed to get back to basics and focus on improving the core experience.
+
+Top Hat Classroom is relatively simple. A professor asks students a question during their lecture, and students are prompted to answer it on their phone or laptop. Then the results are displayed live in class. Professors use this interaction to engage and assess students’ comprehension in real-time, so they can pivot their teaching on-the-fly, and generate in-class discussions.
+
+*Success for both users depends on a student’s ability to answer questions and receive grades for participating and getting correct answers.*
+
+As long as students are able to meet these basic expectations, both users are relatively happy, right? Well, if the hot water’s barely running in your hotel, and you’re not sure how to work the faucet, there’s still a problem. For us, our Classroom apps worked, but it was missing the mark on some basic expectations.
+
+## My Role
+
+<Image src="/img/uploaded/17dd1fd0-fe26-49be-b148-0ede87291448.png" alt="diagram showing designer pm and 11 engineers" width="1520" height="656" caption="How my project teams were organized at the time" />
+
+At the time, I worked on Top Hat Classroom leading design on iOS, Android, and two web teams at a ratio of 1 designer : 2 product managers : 14 developers. I lead product design from ideation to implementation.
+
+For this specific project, I was focused primarily on iOS.Over 50% of student users submit their answers on iOS devices, so we wanted to drive the biggest impact by starting on iOS. Many of the iterative changes were adopted in the web app after being rolled out on iOS.
+
+We were able to get laser sharp focus on the problem space thanks to our super secret weapon Jeremy, our user researcher. He helped connect us with professors for direct observation in classrooms, so we weren’t making decisions based on assumptions. My product manager Blanca was hyper focused on finding problems, and steered our ship in the right direction.
+
+## The Classroom Experience
+
+We started to attend classrooms and perform observational research. We’re lucky that for our use case, it’s relatively easy to sit in a classroom and observe our product in action. What’s more, is that there was a professor at University of Toronto who was using Top Hat only 10 minutes away from our office! There’s no better way to build empathy than to be a part of the experience.
+
+### Checkpoints & Quizzes
+
+One of the most common use cases is for professors to present slides, and ask questions throughout their lecture. They do this to check comprehension and pivot what they need to teach to students in real time. Internally, we called these comprehension checks **checkpoints**.
+
+<Image src="/img/uploaded/a549fa1f-2733-4edb-bd26-f79d8698a8c0.png" alt="diagram showing slides and questions flow" width="1460" height="369" caption="Flow for how professors check comprehension throughout a lecture" />
+
+Another common use case is for professors to present a 4-5 questions quiz at the beginning of class, to check if students did their homework, and understand their level of comprehension. This activity helps them choose which topics they need to go over again in class.
+
+To enable these types of tasks, students need to be able to answer questions on their device without issues. If there are any problems while asking questions, it disrupts the learning flow, and interrupts a professor’s classroom goals.
+
+### Asking Questions in the Classroom
+
+<Image src="/img/uploaded/7148e909-33d6-4c33-912c-2c987128cf75.png" alt="flow showing questions being asked by students" width="3016" height="1174" caption="Flow showing how professor and student flows work " />
+
+In the “happy path” scenario, professors open a question to gather responses from students. Students then open the question on their device, choose a response, and submit their answer. It’s important that their submission is received and grades are recorded.
+
+While this flow might seem simple, what types of issues cause an “unhappy path?” How might we handle cases when there is low network connectivity? What happens when multiple questions are asked at once? How can we encourage students to respond to questions faster, so that we don’t waste valuable class time? How can we make things work the way students expect them to?
+
+## Problems
+
+Someone, somewhere, probably in a Medium article, said “Good designers fall in love with the problem, not their solutions.” Our team’s firm grounding in research made it easy to discover problems. From the observational research, event tracking data, and design heuristics we were able to have productive discussions to prioritize which problems we would tackle together.
+
+<Image src="/img/uploaded/dfff9acb-4f84-4307-839b-20c30de78754.png" alt="flow showing problems of asking questions" width="1117" height="769" caption="Highlighting problems in the flow helped align our team around what to focus on" />
+
+For students in the classroom we discovered the following needs:
+
+1. **Open and answer questions faster**This keeps the teaching flow moving along inside of the classroom.We noticed some students missed the submit button completely!Some students lagged behind and missed questions
+2. **General usability improvements**Students didn’t understand when a question was “closed” or “paused” by a professor. The UI didn’t reinforce what was happening.iOS navigation patterns didn’t feel natural, and caused usability issues. Users would view slides and expect to swipe from slide to slide. There was a lot of unnecessary context switching between views, and confusion while navigating.The UI for questions was inconsistent, did not comply with Accessibility guidelines.The language used to communicate states were different in the professor UI, student web UI, and student mobile UIStyle guidelines, and interaction patterns were not well defined or documented.
+3. **Technical problems caused reliability/perceived reliability issues**Reliability issues caused a lot of noise and confusion in classrooms. Students were flustered and confused when their answers didn’t submit properly.We noticed sometimes students were frustrated and perceived that their answer hadn’t been submitted, when really our UI didn’t clearly communicate what was happening.We save student responses when there is poor network connectivity, but we weren’t doing a great job of letting users know that we had done so.
+4. **Better assurance of answer submission**While submitting, students were unclear if their answer had been submitted. The UI didn’t instill high user confidence.Answer resubmission was unclear. If users changed their answer, they had no idea which answer had been recorded. We noticed students mashing the submit button multiple times to ensure their answer went through.Unsure if they got grades for their answer. We saw that students would immediately check the gradebook after a question was closed, sometimes to their detriment, as they would miss a follow up question as they were busy checking the gradebook.
+
+## Solutions
+
+### 1. The Product Dictionary
+
+The first step was to start to align around language. Adam, another designer on my team, had lead a project on improving the professor experience in Classroom. We came up with a **Product Dictionary **the would help to define what language conventions we’d use in our designs.
+
+<Image src="/img/uploaded/40bef36d-6b6b-403b-bfdd-dfc19b74c034.png" alt="google docs preview of questions we ask" width="2132" height="1644" caption="The beginning of our Product Dictionary" />
+
+We gathered common terms that we would use to describe actions inside of our product. For example, do you “send” a student’s answer, or do you “submit” a students answer? Aligning our language conventions kept our products in sync, and made the experience less confusing for users.
+
+### 2. Improved Questions & 3. Improved Slides on iOS
+
+I worked on 3-4 different prototypes to help solve some of these issues. To generate ideas, I planned a sketching session with the mobile development team, and a separate session with the design team. I presented some of the problems we identified, we looked at how slides and questions work inside of the app currently. After sketching, I gathered these ideas to put together initial prototypes using Invision to create video clips I could start to send to colleagues on Slack to help start prioritization discussions.
+
+<Image src="/img/uploaded/5ff9e52d-8822-4616-97a6-465170047fa3.png" alt="sample ui of questions and slides" width="2808" height="2376" caption="Ideation for solutions I explored" />
+
+Sometimes you need to dream big and look at the ideal situation, even if it won’t be fully implemented. This can help expand the realm of possibility, and help get better compromises that put greater focus on the user. If you think small, ideas can sometimes get squeezed and scoped down into nonexistence, and in the end the user suffers.
+
+## What We Built
+
+After discussing, prioritizing, and thinking pragmatically about what we could build, we settled upon a design that was still user focused. We prioritized improving the **questions experience**, since it’s the primary task students need to accomplish. The ideas we looked at around optimizing the slides experience were great, but viewing slides is a secondary task, and is used less on mobile due to the screen size.
+
+
+
+<Image src="/img/uploaded/968d6c2d-74c7-4d02-a41a-b8ec7a371c5f.png" alt="question states screenshot" width="1700" height="1541" caption="All states mapped out for real time questions" />
+
+View Video Walkthrough
+
+<Image src="/img/uploaded/325717b1-2cc3-4970-b0f6-6e46694fb4da.png" alt="flow showing designs we shipped" width="3138" height="1814" caption="Flow of what we shipped for questions and slides" />
+
+A piece was still missing. We couldn’t just forget about slides. After all, **50% of the professors** that use Classroom present slides in Top Hat. Though, we didn’t have the resources to rebuild how slides worked, so we found a simple compromise to reuse the existing slide carousel functionality. I believe that this compromise actually made the design simpler and clearer to understand for users, and still keeps questions at the forefront.
+
+<Image src="/img/uploaded/4379055e-29c6-4bc4-8d20-ac9da94981e2.png" alt="mockup of a slide and question being asked" width="1080" height="787" caption="Our slides solution which reused part of the existing slides carousel" />
+
+## User Testing & Roll Out
+
+Another advantage to having access to classrooms, was that we could mitigate product risk by testing new features in classrooms. After building, we loaded a Test Flight build onto our QA test devices and brought them to a classroom to observe users. We took videos of students using our app live in a real classroom. This helped us to scoop up some bugs and interaction design issues, allowing us to be more confident to roll it out. From a qualitative standpoint, the design was a success.
+
+Afterwards, it was released to 100% of users. Our Classroom product retention improved overall, but this was just one piece of the puzzle. Users reported less issues, and professors heard less noise in their classrooms, which led to higher renewal. We also focused our CS teams on improving retention. Our whole company was on this initiative so it’s hard to attribute the success  to only one action!
