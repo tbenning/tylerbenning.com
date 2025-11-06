@@ -5,13 +5,21 @@ import githubLogo from "../../public/img/work-logos/github-logo.png"
 import ibmLogo from "../../public/img/work-logos/ibm.png"
 import paddleLogo from "../../public/img/work-logos/paddle.png"
 import togetherLogo from "../../public/img/work-logos/together.png"
-import tophatLogo from "../../public/img/work-logos/top-hat.png"
+import tophatLogo from "../../public/img/work-logos/top-hat.png"  
+import profoundLogo from "../../public/img/work-logos/profound-logo.png"
 
 const workHistory = [
   {
+    title: "Profound",
+    role: "Product Designer",
+    date: "2025-\u00a0\u00a0",
+    img: profoundLogo,
+    url: "https://www.tryprofound.com/",
+  },
+  {
     title: "GitHub",
-    role: "Senior Designer",
-    date: "2022-\u00a0\u00a0",
+    role: "Senior Product Designer",
+    date: "2022-2025",
     img: githubLogo,
     url: "https://www.github.com/",
   },
@@ -28,13 +36,6 @@ const workHistory = [
     date: "2017-19",
     img: tophatLogo,
     url: "https://tophat.com/",
-  },
-  {
-    title: "Brainstation",
-    role: "UX Teaching Assistant",
-    date: "2016-17",
-    img: brainstationLogo,
-    url: "https://brainstation.io/",
   },
   {
     title: "Paddle HR",
