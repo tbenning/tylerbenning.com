@@ -10,11 +10,10 @@ import {
 import { motion } from "framer-motion"
 
 import Capsule from "../Capsule"
-import PersonalProjectList from "../PersonalProjectList"
 import SectionBlogList from "../SectionBlogsList"
 import SectionHeader from "../SectionHeaderUpdate"
 import SectionProjectList from "../SectionProjectList"
-import { DiamondIcon, SquirqleIcon, CircleIcon } from "../StripeIcons"
+import { DiamondIcon, CircleIcon } from "../StripeIcons"
 import Hero from "./Hero"
 
 type Props = {

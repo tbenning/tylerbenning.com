@@ -5,6 +5,7 @@ import Image from "../mdx/Image"
 import Quote from "../mdx/Quote"
 
 const components = {
+  // eslint-disable-next-line @next/next/no-img-element
   img: (props: any) => <img {...props} alt={props.alt || ""} />,
   a: ({ children, href }: { children: React.ReactNode; href?: string }) => (
     <a href={href} target="_blank" rel="noreferrer">

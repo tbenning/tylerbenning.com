@@ -46,11 +46,22 @@ export default function About() {
         </h1>
         <p className="mb-4 text-xl antialiased leading-relaxed tracking-tight text-secondary">
           I've been working as a product designer for a number of years, but I
-          also collaborate in code with engineers too. I worked at GitHub for a few years, working on the design infrastructure team and the growth lifecycle team. In 2025, I left to work at <a className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100" href="https://www.tryprofound.com/" target="_blank" rel="noreferrer">Profound</a> as a product designer.
+          also collaborate in code with engineers too. I worked at GitHub for a
+          few years, working on the design infrastructure team and the growth
+          lifecycle team. In 2025, I left to work at{" "}
+          <a
+            className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
+            href="https://www.tryprofound.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Profound
+          </a>{" "}
+          as a product designer.
         </p>
         <p className="mb-4 text-xl antialiased leading-relaxed tracking-tight text-secondary">
           I currently live in{" "}
-          <del className="text-tertiary">Vancouver Seattle</del>  Brooklyn.
+          <del className="text-tertiary">Vancouver Seattle</del> Brooklyn.
         </p>
         <ul className="flex items-baseline space-x-4">
           <li className="text-sm text-secondary">Find me on</li>
