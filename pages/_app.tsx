@@ -31,10 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Nav />
-      <AnimatePresence
-        exitBeforeEnter
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
+      <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
         <Component {...pageProps} />
       </AnimatePresence>
       <Footer />

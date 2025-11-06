@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import {
   GetStaticPathsResult,
   GetStaticPropsContext,
@@ -12,46 +10,58 @@ import ProseContainer from "../../components/BlogLayout/ProseContainer"
 import Layout from "../../components/Layout"
 import ProjectLayout from "../../components/ProjectLayout"
 import SEO from "../../components/SEO"
-import { query } from ".keystone/api"
+import {
+  getProjectBySlug,
+  getProjectSlugs,
+  serializeProject,
+} from "../../lib/content/projects"
 
 export default function ProjectPage({
   project,
+  serializedContent,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
       <SEO
-        title={project.title}
-        description={project.subtitle}
+        title={project.frontmatter.title}
+        description={project.frontmatter.subtitle}
         og="og-project.png"
       />
       <ProjectLayout>
         <main className="mt-12">
           <div className="mb-8">
-            <Link href="/#work">
-              <a className="border-b border-gray-700 text-secondary hover:bg-gray-100">
-                &larr; Back to Projects
-              </a>
+            <Link
+              href="/#work"
+              className="border-b border-gray-700 text-secondary hover:bg-gray-100"
+            >
+              &larr; Back to Projects
             </Link>
           </div>
           <h1 className="mb-6 text-3xl font-bold tracking-tight md:mb-8 md:text-6xl leading-headers">
-            {project.title}
+            {project.frontmatter.title}
           </h1>
           <div className="flex items-center space-x-8">
-            {project.company && (
+            {project.frontmatter.company && (
               <div>
                 <h2 className="font-semibold text-md">Company</h2>
-                <span className="text-md text-tertiary">{project.company}</span>
+                <span className="text-md text-tertiary">
+                  {project.frontmatter.company}
+                </span>
               </div>
             )}
-            <div>
-              <h2 className="font-semibold text-md">Timeline</h2>
-              <span className="text-md text-tertiary">{project.timeline}</span>
-            </div>
+            {project.frontmatter.timeline && (
+              <div>
+                <h2 className="font-semibold text-md">Timeline</h2>
+                <span className="text-md text-tertiary">
+                  {project.frontmatter.timeline}
+                </span>
+              </div>
+            )}
           </div>
           <hr className="my-8 border-t-2 border-b-0 border-dotted border-primary" />
-          {project.content?.document && (
+          {project.content && (
             <ProseContainer>
-              <DocumentRenderer content={project} />
+              <DocumentRenderer content={serializedContent} />
             </ProseContainer>
           )}
         </main>
@@ -60,19 +70,10 @@ export default function ProjectPage({
   )
 }
 
-type Project = {
-  slug: string
-}
-
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const projects = await query.Project.findMany({
-    query: `slug projectType`,
-  })
+  const slugs = getProjectSlugs()
 
-  const paths = projects
-    .map((project: Project) => project.slug)
-    .filter((slug: string): slug is string => !!slug)
-    .map((slug: string) => `/project/${slug}`)
+  const paths = slugs.map((slug) => `/project/${slug}`)
 
   return {
     paths,
@@ -81,10 +82,14 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
-  const project = await query.Project.findOne({
-    where: { slug: params!.slug as string },
-    query:
-      "id title timeline company content {document (hydrateRelationships: true)}",
-  })
-  return { props: { project } }
+  const slug = params!.slug as string
+  const project = getProjectBySlug(slug)
+
+  if (!project) {
+    return { notFound: true }
+  }
+
+  const serializedContent = await serializeProject(project)
+
+  return { props: { project, serializedContent } }
 }

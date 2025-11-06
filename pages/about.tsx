@@ -16,9 +16,11 @@ export default function About() {
         description="About the life and times of Tyler"
       />
       <div className="relative">
-        <img
-          src="img/bg-circle.svg"
+        <Image
+          src="/img/bg-circle.svg"
           alt="circle with woodgrain"
+          width={400}
+          height={400}
           className="absolute right-0 -bottom-32 -z-10"
         />
         <div className="absolute top-0 right-44">
@@ -44,14 +46,22 @@ export default function About() {
         </h1>
         <p className="mb-4 text-xl antialiased leading-relaxed tracking-tight text-secondary">
           I've been working as a product designer for a number of years, but I
-          like to collaborate in code with engineers, too. Lately, I've been
-          working on a design infrastructure team at GitHub, working closely
-          with the design systems team and product designers alike.
+          also collaborate in code with engineers too. I worked at GitHub for a
+          few years, working on the design infrastructure team and the growth
+          lifecycle team. In 2025, I left to work at{" "}
+          <a
+            className="border-b border-darkseafoam  text-darkseafoam transform ease-in-out duration-200 hover:bg-gray-100"
+            href="https://www.tryprofound.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Profound
+          </a>{" "}
+          as a product designer.
         </p>
         <p className="mb-4 text-xl antialiased leading-relaxed tracking-tight text-secondary">
           I currently live in{" "}
-          <del className="text-tertiary">British Columbia</del> Washington,
-          where you'll find me on the mountain hiking or snowboarding. 🏔 🍁 🏂
+          <del className="text-tertiary">Vancouver Seattle</del> Brooklyn.
         </p>
         <ul className="flex items-baseline space-x-4">
           <li className="text-sm text-secondary">Find me on</li>

@@ -1,0 +1,257 @@
+---
+title: "Improving the Program Launch Experience"
+subtitle: "Product Design, User Research, Front End"
+slug: "together-program-launch"
+projectType: "work"
+isPublished: 1
+hasDarkBg: 1
+timeline: "2020 Q4"
+company: "Together"
+bgColor: "#E17757"
+featuredImage: "/img/uploaded/beb379ef-fa8f-4d0b-9459-221f8fa360eb.png"
+---
+
+<Image src="/img/uploaded/d4e7a4d1-9001-4d4a-8090-22e443daef0e.png" alt="mockup showing introduction step" width="768" height="509" caption="Preview of the registration wizard we shipped" />
+
+Together sells a white-label product that helps Learning & Development teams at large companies run internal mentoring programs. We help with everything from marketing the program to measuring the quality of mentorship connections made. Our customers include AirBnb, Heineken, 7/11, the UN, Disney, and 80+ other organizations. 
+
+Customers often buy us after they've tried to run their own mentoring program using Google forms, then realize how difficult it is to pair everyone up, provide guidance, and measure the success of their program. Most of our major customers are enterprise, which means they need a lot of flexibility and customizability.
+
+To date, I've designed and iterated ~90% of the administrator and end user applications — with some help from some awesome student interns! 
+
+---
+
+## The Project
+
+In Q4 of 2020, we worked on a large project (broken into a number of smaller projects) with the goal to improve how administrators launch mentorship programs. At this point the product was almost two years old, and we had about 30 customers. We set out to help our **administrator user** to create their program, launch registration, and get users paired together faster, easier, with more confidence, and less critical errors. 
+
+Nathan, the co-founder and head of product, leads the kickoff of our projects with a **Hypothesis Brief **that we work on together. This product document signified the beginning of the **Discovery phase** of our project.
+
+We kick this Google doc back and forth with each other to iron out details, gather additional data, clarify problems, and gain confidence. Once we're happy, we bring it to our engineering team to start collaborating on solutions.
+
+<Image src="/img/uploaded/c527f99c-b975-48ec-8978-7ee891459551.png" alt="screenshot of a google doc showing a hypothesis brief" width="768" height="358" caption="A hypothesis brief that we used to kick off the project" />
+
+## Why did we work on this
+
+### We were suffering from experience rot
+
+Experience rot happens when new features get added in ad-hoc, outside of the vision of the initial design. As a two year old startup we’d quickly shipped features as customer needs arose and glued them in. It was confusing for admins to find the features they needed to launch a program. It was leading to embarrassing mistakes.
+
+### Reduce & avoid customer churn
+
+Improving the “first time user experience” helps with retention. Administrators were having a bad experiences launching programs, we worried about churn. We had unhappy customers that we wanted to turn into happy customers who would shout our praises from the top of a mountain.
+
+### Manual onboarding was no longer scalable — costing time & money
+
+Manual onboarding was costly for us since it took a lot of our founder and CS teams' time over multiple onboarding calls — this was especially bad for smaller customers because sometimes the time we spent cost more than their contract value. We were winning RFPs and acquiring customers faster than we had before. We knew we had >10 launches coming in the next few months, and wanted to get better onboarding in place so our CS team could focus on value-add for customers, not product training.
+
+### Improve revenue by launching more programs faster
+
+We get paid based on** # of active pairings**. If admins can launch more programs more easily, then we can expand internally throughout existing customers, and also launch new customers faster. Faster timelines means we get paid earlier.
+
+---
+
+## Constraints
+
+### Timelines & Delivery Goals
+
+We wanted to focus on the entire program launch experience, but as an early stage startup, we also wanted to ship incrementally, so that our users could use new features as we built them. We had **3 months** to finish as much as we could, with a handful of engineers. 
+
+We had **existing features **we could leverage that were functional, but needed iteration and improvements in how they were organized and pieced together.
+
+### Team 
+
+At the time, our team was comprised of 1 designer, 1 co-founder PM, 2 engineers, and 7 full-time employees total. We were small, scrappy, and needed to balance all of our customers HRIS integrations, customer requests, and product bugs while building new features.
+
+### Research Inputs 
+
+Most of our initial research came from working with customers directly, and analyzing their experience in product training sessions. We had low volume of admin users, so qualitative data was more helpful.
+
+---
+
+## Problems 
+
+### Problem #1 — Lack of guidance in the user experience
+
+- Features were there and worked, but there was little guidance 
+- Users navigated to 5-6 different places to accomplish core tasks
+- No clear indicator of progress — users complete launches over the course of several weeks, so this is especially needed
+
+<Image src="/img/uploaded/a6ced2f7-2b00-49a6-a73f-c76285c05718.png" alt="arrows pointing to problem areas of the existing app" width="2274" height="1068" caption="Steps an admin would have to take to launch a program" />
+
+### Problem #2 — Admins take months to launch
+
+- Unsure of best practices of questions to ask and algorithm rules to use to suggest pairing recommendations
+- Overwhelming amount of work compounded by unclear steps in process
+- Procrastination / lack of motivation — it's a lot of work to run a program!
+
+### Problem #3 — Some existing features needed an iteration
+
+Features we had launched quickly to get user value had usability issues — big and small. While customers got the value out of the feature and it worked, sometimes it lead to minor problems, and sometimes it lead to critical errors. For example:
+
+- Working with the questionnaire was cumbersome and admins had trouble using some question types
+- It was difficult to reorder questions, meaning admins would delete and recreate questions
+- Email issuesAdmins would forget to edit email templates and send emails without having proofread the copyIt was unclear which emails would send and when, leading to** **accidental email blastsNo confirmation of emails sent, so admins never knew if emails were delivered, or if users had received them
+- Issues setting program permissions accurately, some users were accidentally blocked from joining programs when they shouldn't be
+- Unclear which pairing process to use — admin led? or mentee led? 
+
+### Problem #4 — Some features were missing in the user journey
+
+Some parts of the user journey we hadn't quite solved for yet, which would require net new features. For example: 
+
+- Hard to know what questions to ask users during registration, no clear set of default suggestions
+- Some question features weren't functioning properly — like making a response to a question required
+- Algorithm rules were read-only and needed to be changed manually by our engineering team in the backend
+- Admins didn't know when they had the right amount of mentors and mentees registered. Sometimes there would be too few mentors for the number of mentees. They needed analysis and reassurance of when they would be ready.
+
+---
+
+## How did we know we had these problems?
+
+We had a high degree of confidence in the problems in our product. Nathan our head of product and I looked at evidence from a few areas:
+
+- **Customer support requests channel and FullStory** **sessions **— This was a great place to mine information! Lots of admins would message us on Intercom as they were launching their programs. We'd sometimes reference issues with FullStory session data, to uncover user issues. Since we were a small team, we all talked to customers through Intercom, until we hired our CS team.
+- **Onboarding Sessions** — We had experience from onboarding our existing 20 or so customersNathan, head of product had been onboarding customers and launching programs since the start of the companyI had also onboarded a some smaller customers onsite during YC in CaliforniaI sat in on current customer onboarding sessions with our new CS hire
+- **Scrappy user testing** — I'd tested program creation flows internally with new hires, people from our co-working space, as well as some HR leaders sourced from userinterviews.com. We watched people struggle and not complete tasks.
+
+---
+
+## Solutions
+
+### Design Process
+
+Projects are different and require different parts of the process, but I generally work through each of these steps:
+
+1. Read, critique, contribute to product kickoff docGather more data if needed
+2. Generate artifacts for team to understand the problem better
+3. Design kickoff workshop to generate ideas (if necessary)
+4. Generate solution flows & designs
+5. Critique > Iterate
+6. Start building when team feels confident and ready
+7. Test & give design feedback on production work 🔥 Pull branch & ship fixes directly to branch — if I have the time
+8. Ship to prod
+9. Monitor on Amplitude, FullStory, Sentry, Support Channels
+
+### User Journey Maps
+
+Before carving out solutions, I took a 10k foot view of our administrator’s user journey, task flow, and experience based on everything I'd learned. This became a useful tool for us to align the team and prioritize projects against.
+
+<Image src="/img/uploaded/5e89152b-6e81-495d-8cc4-516a2c5e6a57.png" alt="an experience map of admins emotions while launching programs" width="3713" height="2140" caption="An experience map showing pain points, opportunities, and experiences" />
+
+I mapped out the emotional experience that admins were having during the process, based on on anecdotes of real experiences I’d learned about. This helped us understand the tasks admins needed to complete and empathize with their emotional experience. The empathy built helped weigh in on how we prioritized fixes.
+
+<Image src="/img/uploaded/b1ecdb1d-ce4a-4542-9919-375a7a1260fc.png" alt="flow chart of tasks admins do while completing registration" width="3519" height="997" caption="User journey map showing tasks admins complete while running a program" />
+
+I also mapped out all of the tasks that admins needed to complete in the process. It helped our team to start thinking of a program launch as a series of steps in a funnel that we needed to optimize.
+
+We established 3 desired states across the launch experience:
+
+1. Program is created 
+2. Users are registered 
+3. Pairings are created
+
+### Flows, Systems, & UI Designs
+
+I spent some time working through lo fidelity designs with my PM, Nathan. Through discussions, sketching, and quick iterations, we settled on a 4 part system that would provide the foundation on which the designs would live.
+
+<Image src="/img/uploaded/0027c2b2-d636-4c7e-a73c-bc48cbbb3a07.png" alt="4 boxes with wizards for home, registration, pairing " width="1168" height="523" caption="Our 4 part system to build the UI around" />
+
+<Image src="/img/uploaded/8fded974-ddcd-4fcc-a9d7-311f50f88f80.png" alt="flows showing 3 states" width="1966" height="1099" caption="3 primary flows for launching a program" />
+
+### Pt 1/ Homepage Dashboard & Setup Helper
+
+<Image src="/img/uploaded/3e7cab68-1ae2-4b34-ae9a-43267234058d.png" alt="homepage screenshot" width="768" height="466" caption="Homepage dashboard with setup helper" />
+
+<Image src="/img/uploaded/298b0b40-b3d2-48b1-aa84-d58b754fa30e.png" alt="dashboards showing call to actions for register and pairing " width="764" height="741" caption="State change within the setup helper" />
+
+- The data ticker shows progress towards an admin's goals (registration, pairings, sessions)
+- The setup helper shows progress of what admins have completed
+- The CTA shows the next expected step to complete
+- Wizards are easily accessed from this screen, and admins can edit past steps completed too
+
+### Pt 2/ Program Creation Wizard
+
+<Image src="/img/uploaded/3eae4eb5-dbfc-451b-b971-8a97db0a7deb.png" alt="screenshot of choosing a program template" width="960" height="343" caption="This 2 step wizard lets admins leverage templates of content while creating programs" />
+
+- Admins can explore templates based on common use cases
+- Admins can view questions, algorithm rules, and suggested content
+- Admins can choose a template to get started, or build their own from scratch
+
+<Image src="/img/uploaded/31b33c59-3db2-4273-b459-c62f51da322b.png" alt="alternate patterns for creating content" width="1360" height="724" caption="Design explorations: Alternate patterns to choose program content after creation" />
+
+We explored and tested different patterns in user tests. We tried out explorations where admins would select specific bodies of questions based on what they wanted to ask participants. We found that admins didn't really know what they wanted, so would choose all the questions they saw. This would have lead to a poorer user experience, with long questionnaires, so we chose to have default "out-of-the-box" program templates.
+
+### 3/ Registration Wizard
+
+<Image src="/img/uploaded/fc1bfc0d-f52f-4b5f-a607-495541b9048b.png" alt="Registration wizard screenshot" width="2842 " height="1138" caption="Registration wizard" />
+
+- Admins can view all necessary steps to launch program registration in a linear view, but can also navigate to different steps ad-hoc
+- Admins can see their progress, and understand which steps they've completed, and which steps need to be completed
+- Admins can save their progress, and complete their registration in a follow up session, starting back where they left off 
+
+<Image src="/img/uploaded/d3972fb6-ca2b-4869-ab8a-f4dba2cc8ed4.png" alt="alternate wizard patterns" width="2838 " height="1474" caption="Alternate patterns included horizontal tabs and a setup checklist page" />
+
+We considered looking at flexible horizontal tab patterns, and setup stepper patterns. We tried a few different mixes, but felt the linear flow pattern worked best. 
+
+<Image src="/img/uploaded/97c6fb04-86d6-466d-b634-a137a5fe1277.png" alt="inspiration for the wizard pattern" width="1224" height="790" caption="Inspiration for wizard pattern from Stripe, AirBnb, & Gusto" />
+
+We liked the wizard pattern with a sidebar to show progress for a few reasons:
+
+- We'd seen something similar from Stripe, Gusto, AirBnb for inspiration
+- It is a good way to show progress for a large task, often over multiple sessions
+- Keeps users focused without distracting navigation in new context
+- Allows for chunking of information / progressive disclosure
+- Re-usable across our app!
+
+#### 4/ Pairing Wizard 
+
+We reused the registration wizard pattern for the pairing process as well. It helps users since they're familiar with how it works, and also good for our small development team to reuse this pattern.
+
+<Image src="/img/uploaded/aba70d55-f7e2-4f7b-8d95-565f8f8d2133.png" alt="pairing overview screen" width="1440" height="699" caption="Overview page for the pairing wizard" />
+
+These 4 parts made up the foundation for the project that we would work on. We didn't have all of the designs done, but had a good overview for how this entire project would work together. We felt confident enough to rescope, put together a **Product Requirements Doc** and continue designing more key elements of the design.
+
+We scoped out initial projects as follows:
+
+<Image src="/img/uploaded/e9376c38-b4b9-49f4-8eab-16f2102aa5e4.png" alt="timeline of projects in a chart" width="1148" height="467" caption="Our initial scope and timeline of projects" />
+
+---
+
+## Delivery
+
+While the high level system was worked out, we needed to prioritize what to build and when. This is where the discussion began around making tradeoffs and prioritization. 
+
+First thing we did was push the **pairing process** projects to the following quarter. We focused on the pieces that would help admins to launch registration to their program, therefore helping admins to commit to the program launch and avoid procrastination. Once they launched registration, they'd have to launch the rest of the program.
+
+<Image src="/img/uploaded/07ea8efa-af58-4c14-b281-c040a2842046.png" alt="gantt chart showing timelines changed" width="2640" height="974" caption="Revised timeline based on what we'd sussed out in discovery" />
+
+### User Testing
+
+The change in timelines also allowed us to spend a bit more time **usability testing** our designs with fresh administrators, while the engineers worked on building the designs. We booked 5 calls with new and existing admins, and tested our designs. 
+
+Key changes included: 
+
+- Improved UX copywriting to make tasks clearer
+- Rearranging the order of the flow based on users' mental models
+
+### UI Feedback Docs
+
+I've made a habit to write up feedback docs with screenshots of what needs to be fixed while engineers write code. I'll often write pseudo code or help the developers by referencing props that need to be changed on components, or sending links to components from our front end library — we use the MUI library for our frontend, and I'm quite comfortable with the tooling and documentation! I'll usually do this before anything is shipped. I probably wrote 5-10 of these docs over the course of the project.
+
+<Image src="/img/uploaded/39a3c534-c2b8-4762-969c-4ef29433a95d.png" alt="ui feedback docs google docs screenshot" width="1436" height="632" caption="UI feedback docs used to communicate fit & finish with my engineering team" />
+
+### Collaborating in Code
+
+When time allows, I like to help speed up delivery timelines by writing front end myself, or doing the fit & finish directly in the code myself. I probably submitted 5-10 PRs during this project to help out at various points. 
+
+<Image src="/img/uploaded/9963407a-c0ab-43de-b5e5-a1e67f38c1a3.png" alt="screenshot of my github activity" width="2646" height="1196" caption="Preview of my contributions over time at Together *humblebrag*" />
+
+---
+
+## After We Shipped
+
+We shipped our projects incrementally, had admins use our new features, and got feedback as we went. We tweaked and modified things that were confusing, or edge cases we'd missed. Overall, we learned a lot about the impact we were able to make months after the projects. The project was successful in many regards.
+
+## Impact
+
+After we'd wrapped Q4, we spent Q1 working on **Pairing Projects.** We continued to do more discovery research, and increased scope on new problems we learned about in the discovery process. I could tell you more about this, but that's a whole other tale!

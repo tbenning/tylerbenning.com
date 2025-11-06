@@ -10,43 +10,38 @@ import {
 import { motion } from "framer-motion"
 
 import Capsule from "../Capsule"
-import PersonalProjectList from "../PersonalProjectList"
 import SectionBlogList from "../SectionBlogsList"
 import SectionHeader from "../SectionHeaderUpdate"
 import SectionProjectList from "../SectionProjectList"
-import { DiamondIcon, SquirqleIcon, CircleIcon } from "../StripeIcons"
+import { DiamondIcon, CircleIcon } from "../StripeIcons"
 import Hero from "./Hero"
 
 type Props = {
-  posts: [
-    {
-      id: string
-      title: string
-      subtitle: string
-      slug: string
-      publishDate: Date
-    }
-  ]
-  projects: [
-    {
-      id: string
-      title: string
-      subtitle: string
-      slug: string
-      projectType: string
-      isPublished: boolean
-      bgColor: string
-      hasDarkBg: boolean
-      timeline: string
-      company: string
-      featuredImage: {
-        alt: string
-        image: {
-          url: string
-        }
+  posts: {
+    id: string
+    title: string
+    subtitle: string
+    slug: string
+    publishDate: Date
+  }[]
+  projects: {
+    id: string
+    title: string
+    subtitle: string
+    slug: string
+    projectType: string
+    isPublished: boolean
+    bgColor: string
+    hasDarkBg: boolean
+    timeline: string
+    company: string
+    featuredImage?: {
+      alt: string
+      image: {
+        url: string
       }
     }
-  ]
+  }[]
 }
 
 function FadeIn({ children }: any) {
@@ -67,10 +62,10 @@ function FadeIn({ children }: any) {
 
 export default function Homepage({ posts, projects }: Props) {
   const workProjects = projects.filter(
-    (project) => project.projectType === "work"
+    (project) => project.projectType === "work",
   )
   const personalProjects = projects.filter(
-    (project) => project.projectType === "personal"
+    (project) => project.projectType === "personal",
   )
 
   return (
@@ -148,7 +143,7 @@ export default function Homepage({ posts, projects }: Props) {
         </section>
       </FadeIn>
 
-      <FadeIn>
+      {/* <FadeIn>
         <section className="mx-auto mb-10 md:mb-20">
           <SectionHeader
             title="Fun Projects"
@@ -162,7 +157,7 @@ export default function Homepage({ posts, projects }: Props) {
           <div className="pt-12" />
           <PersonalProjectList projects={personalProjects} />
         </section>
-      </FadeIn>
+      </FadeIn> */}
     </>
   )
 }
